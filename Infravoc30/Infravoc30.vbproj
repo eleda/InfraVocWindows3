@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9A915F8-BA3B-4CF3-BD21-EBEF522FB76E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>InfraVocabulary.My.MyApplication</StartupObject>
+    <RootNamespace>InfraVocabulary</RootNamespace>
+    <AssemblyName>Vocabulary</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>9CB63C3C0C8FBD17A6ACD063222E52ADDB4B1E47</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Infravoc30_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <ApplicationIcon>InfraVocIcon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>hu-HU</TargetCulture>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>3.6.620.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Vocabulary.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Vocabulary.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Search.Designer.vb">
+      <DependentUpon>Search.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyEntry.Designer.vb">
+      <DependentUpon>ModifyEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseVocab.Designer.vb">
+      <DependentUpon>ChooseVocab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseVocab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewVocab.Designer.vb">
+      <DependentUpon>NewVocab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewVocab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rewrite.Designer.vb">
+      <DependentUpon>Rewrite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rewrite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.Designer.vb">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEntry.Designer.vb">
+      <DependentUpon>NewEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.vb">
+      <DependentUpon>MainScreen.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.vb">
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VocabularyHelper.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyEntry.resx">
+      <DependentUpon>ModifyEntry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseVocab.resx">
+      <DependentUpon>ChooseVocab.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewVocab.resx">
+      <DependentUpon>NewVocab.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rewrite.resx">
+      <DependentUpon>Rewrite.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEntry.resx">
+      <DependentUpon>NewEntry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutDialog.resx">
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="default.voc" />
+    <None Include="Infravoc30_1_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iv_newword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iv_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iv_erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iv_erase1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iv_edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iv_newword1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaarnyekolás féláttestszó.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_shad_down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome_shad.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rolhirshad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaarnyekolás féláttestszó1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_title21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\allaphat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\allaphat1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\torvleftsad.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infrprogbar2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\allaphat2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_side_1a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaarnyekolás féláttestszó2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archiv_shad_down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\torv_shad_mini.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tab2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LiniaMaxorHirhozo_vonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxoronline.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ottod1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Infravoc30_TemporaryKey.pfx" />
+    <None Include="Resources\bicbuc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_ivocgood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inffffos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infravocabulary3_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="infravocabulary3_icon.ico" />
+    <Content Include="InfraVocIcon.ico" />
+    <None Include="Resources\InfraVocIcon.png" />
+    <None Include="Resources\StartupIcon.bmp" />
+    <None Include="Resources\floppy_1mini_1.png" />
+    <None Include="Resources\opendicmini_1.png" />
+    <None Include="Resources\newdicmini_1.png" />
+    <None Include="Resources\gomini_1.png" />
+    <None Include="Resources\iconviewmini_1.png" />
+    <None Include="Resources\findmini_1.png" />
+    <None Include="Resources\ex_1.png" />
+    <None Include="Resources\keresod_1.jpg" />
+    <None Include="Resources\egyebek.bmp" />
+    <None Include="Resources\tovabb.bmp" />
+    <None Include="Resources\kozta1_Layer 11.jpg" />
+    <None Include="Resources\kozta2_Layer 1.jpg" />
+    <None Include="Resources\kozta1_Layer 1.jpg" />
+    <None Include="Resources\kozta_Layer 1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
