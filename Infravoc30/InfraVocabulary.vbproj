@@ -92,40 +92,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Search.Designer.vb">
-      <DependentUpon>Search.vb</DependentUpon>
+    <Compile Include="SearchDialog.Designer.vb">
+      <DependentUpon>SearchDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="Search.vb">
+    <Compile Include="SearchDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.vb">
-      <DependentUpon>Settings.vb</DependentUpon>
+    <Compile Include="SettingsDialogForm.Designer.vb">
+      <DependentUpon>SettingsDialogForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Settings.vb">
+    <Compile Include="SettingsDialogForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyEntry.Designer.vb">
-      <DependentUpon>ModifyEntry.vb</DependentUpon>
+    <Compile Include="ModifyEntryDialogForm.Designer.vb">
+      <DependentUpon>ModifyEntryDialogForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ModifyEntry.vb">
+    <Compile Include="ModifyEntryDialogForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChooseVocab.Designer.vb">
-      <DependentUpon>ChooseVocab.vb</DependentUpon>
+    <Compile Include="ChooseVocabDialogForm.Designer.vb">
+      <DependentUpon>ChooseVocabDialogForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChooseVocab.vb">
+    <Compile Include="ChooseVocabDialogForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewVocab.Designer.vb">
-      <DependentUpon>NewVocab.vb</DependentUpon>
+    <Compile Include="NewVocabDialogForm.Designer.vb">
+      <DependentUpon>NewVocabDialogForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="NewVocab.vb">
+    <Compile Include="NewVocabDialogForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rewrite.Designer.vb">
-      <DependentUpon>Rewrite.vb</DependentUpon>
+    <Compile Include="RewriteDialogForm.Designer.vb">
+      <DependentUpon>RewriteDialogForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Rewrite.vb">
+    <Compile Include="RewriteDialogForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -133,23 +133,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Splash.Designer.vb">
-      <DependentUpon>Splash.vb</DependentUpon>
+    <Compile Include="SplashForm.Designer.vb">
+      <DependentUpon>SplashForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Splash.vb">
+    <Compile Include="SplashForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewEntry.Designer.vb">
-      <DependentUpon>NewEntry.vb</DependentUpon>
+    <Compile Include="NewEntryDialog.Designer.vb">
+      <DependentUpon>NewEntryDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="NewEntry.vb">
+    <Compile Include="NewEntryDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainScreen.vb">
+    <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainScreen.Designer.vb">
-      <DependentUpon>MainScreen.vb</DependentUpon>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -171,40 +171,40 @@
     <Compile Include="VocabularyHelper.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Search.resx">
-      <DependentUpon>Search.vb</DependentUpon>
+    <EmbeddedResource Include="SearchDialog.resx">
+      <DependentUpon>SearchDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
-      <DependentUpon>Settings.vb</DependentUpon>
+    <EmbeddedResource Include="SettingsDialogForm.resx">
+      <DependentUpon>SettingsDialogForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyEntry.resx">
-      <DependentUpon>ModifyEntry.vb</DependentUpon>
+    <EmbeddedResource Include="ModifyEntryDialogForm.resx">
+      <DependentUpon>ModifyEntryDialogForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChooseVocab.resx">
-      <DependentUpon>ChooseVocab.vb</DependentUpon>
+    <EmbeddedResource Include="ChooseVocabDialogForm.resx">
+      <DependentUpon>ChooseVocabDialogForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewVocab.resx">
-      <DependentUpon>NewVocab.vb</DependentUpon>
+    <EmbeddedResource Include="NewVocabDialogForm.resx">
+      <DependentUpon>NewVocabDialogForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rewrite.resx">
-      <DependentUpon>Rewrite.vb</DependentUpon>
+    <EmbeddedResource Include="RewriteDialogForm.resx">
+      <DependentUpon>RewriteDialogForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash.resx">
-      <DependentUpon>Splash.vb</DependentUpon>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewEntry.resx">
-      <DependentUpon>NewEntry.vb</DependentUpon>
+    <EmbeddedResource Include="NewEntryDialog.resx">
+      <DependentUpon>NewEntryDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainScreen.resx">
-      <DependentUpon>MainScreen.vb</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

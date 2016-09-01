@@ -1,23 +1,23 @@
 ﻿Imports System.Windows.Forms
 
-Public Class NewVocab
+Public Class NewVocabDialogForm
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         On Error GoTo 5
 
         FileOpen(20, TextBox1.Text + ".voc", OpenMode.Output)
         FileClose(20)
-        MainScreen.filenam.Text = TextBox1.Text + ".voc"
-        MainScreen.megnyitas()
+        MainForm.FileNameHiddenTextBox.Text = TextBox1.Text + ".voc"
+        MainForm.megnyitas()
         'If CheckBox2.Checked = True Then
         If CheckBox1.Checked Then
-            ChooseVocab.ListBox1.Items.Add(TextBox1.Text + ".voc")
-            Settings.ListBox1.Items.Add(TextBox1.Text + ".voc")
-            MainScreen.szolistament_dialog3bol()
+            ChooseVocabDialogForm.ListBox1.Items.Add(TextBox1.Text + ".voc")
+            SettingsDialogForm.ListBox1.Items.Add(TextBox1.Text + ".voc")
+            MainForm.szolistament_dialog3bol()
         End If
         If CheckBox2.Checked = True Then
-            Settings.TextBox1.Text = TextBox1.Text + ".voc"
-            Settings.beallitas_mentes()
+            SettingsDialogForm.TextBox1.Text = TextBox1.Text + ".voc"
+            SettingsDialogForm.beallitas_mentes()
         End If
 
 

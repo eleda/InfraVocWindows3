@@ -1,10 +1,10 @@
 ﻿Imports System.Windows.Forms
 
-Public Class ModifyEntry
+Public Class ModifyEntryDialogForm
     Dim index As Integer
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
-        Settings.ListBox1.Items(ind.Text) = TextBox1.Text
+        SettingsDialogForm.ListBox1.Items(ind.Text) = TextBox1.Text
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub

@@ -1,14 +1,14 @@
 ﻿Imports System.Windows.Forms
 
-Public Class ChooseVocab
+Public Class ChooseVocabDialogForm
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         On Error GoTo 5
 
         '        FileOpen(20, TextBox1.Text + ".voc", OpenMode.Output)
         '       FileClose(20)
-        MainScreen.filenam.Text = ListBox1.Items(ListBox1.SelectedIndex)
-        MainScreen.megnyitas()
+        MainForm.FileNameHiddenTextBox.Text = ListBox1.Items(ListBox1.SelectedIndex)
+        MainForm.megnyitas()
         'If CheckBox2.Checked = True Then
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
@@ -48,8 +48,8 @@ Public Class ChooseVocab
 
             '        FileOpen(20, TextBox1.Text + ".voc", OpenMode.Output)
             '       FileClose(20)
-            MainScreen.filenam.Text = OpenFileDialog1.FileName
-            MainScreen.megnyitas()
+            MainForm.FileNameHiddenTextBox.Text = OpenFileDialog1.FileName
+            MainForm.megnyitas()
             'If CheckBox2.Checked = True Then
             Me.DialogResult = System.Windows.Forms.DialogResult.OK
             Me.Close()

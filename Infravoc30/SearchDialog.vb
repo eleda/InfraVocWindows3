@@ -1,14 +1,7 @@
 ﻿Imports System.Diagnostics
 Imports System.Windows.Forms
 
-Public Class SearchWindow
-
-    Private Sub Explorer1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ResultListView_SelectedIndexChanged()
-        SearchTitleLabel.Focus()
-        ResultListView.Clear()
-        FindText.Clear()
-    End Sub
+Public Class SearchDialog
 
     Private Sub LoadListView()
         Dim lvItem As ListViewItem
@@ -107,14 +100,14 @@ Public Class SearchWindow
         Dim go, k
         Dim eda, e, keresszov$, o
         o = 0
-        eda = MainScreen.List1.SelectedIndex
+        eda = MainForm.WordsListBox.SelectedIndex
 
-        For e = 0 To MainScreen.List1.Items.Count - 1
+        For e = 0 To MainForm.WordsListBox.Items.Count - 1
             If SearchEverywhereCheckBox.Checked = True Then
-                For k = 1 To Len(MainScreen.List1.Items(e)) - Len(FindText.Text)
-                    keresszov$ = LCase$(Mid$(MainScreen.List1.Items(e), k, Len(FindText.Text)))
+                For k = 1 To Len(MainForm.WordsListBox.Items(e)) - Len(FindText.Text)
+                    keresszov$ = LCase$(Mid$(MainForm.WordsListBox.Items(e), k, Len(FindText.Text)))
                     If keresszov$ = LCase$(FindText.Text) Then
-                        ResultListView.Items.Add(MainScreen.List1.Items(e), 3)
+                        ResultListView.Items.Add(MainForm.WordsListBox.Items(e), 3)
                         ResultListView.Items(o).Name = e
                         o = o + 1
                         GoTo bbb
@@ -122,9 +115,9 @@ Public Class SearchWindow
                 Next k
 
             Else
-                keresszov$ = LCase$(Mid$(MainScreen.List1.Items(e), 1, Len(FindText.Text)))
+                keresszov$ = LCase$(Mid$(MainForm.WordsListBox.Items(e), 1, Len(FindText.Text)))
                 If keresszov$ = LCase$(FindText.Text) Then
-                    ResultListView.Items.Add(MainScreen.List1.Items(e), 3)
+                    ResultListView.Items.Add(MainForm.WordsListBox.Items(e), 3)
                     ResultListView.Items(o).Name = e
                     o = o + 1
                 End If
@@ -137,7 +130,7 @@ bbb:
             Next go
         End If
 
-        MainScreen.List1.SelectedIndex = eda
+        MainForm.WordsListBox.SelectedIndex = eda
         If ResultListView.Items.Count = 0 Then
             MsgBox("Nem található!", vbInformation)
             FindText.Focus()
@@ -150,23 +143,14 @@ bbb:
 
     Private Sub GoButton_Click() Handles GoToolStripButton.Click
         If ResultListView.SelectedItems.Count > 0 Then
-            MainScreen.List1.SelectedIndex = ResultListView.SelectedItems(0).Name
+            MainForm.WordsListBox.SelectedIndex = ResultListView.SelectedItems(0).Name
             Close()
-            MainScreen.Activate()
+            MainForm.Activate()
         End If
     End Sub
 
     Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchToolStripButton.Click
         SearchButton_Click()
-    End Sub
-
-    Private Sub EditButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EditToolStripButton.Click
-        If ResultListView.SelectedItems.Count > 0 Then
-            MainScreen.List1.SelectedIndex = ResultListView.SelectedItems(0).Name
-            Close()
-            MainScreen.atnevez()
-            MainScreen.Activate()
-        End If
     End Sub
 
     Private Sub command2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles command2.Click
@@ -175,5 +159,12 @@ bbb:
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         GoButton_Click()
+    End Sub
+
+    Private Sub SearchWindow_Load(sender As Object, e As EventArgs)
+        ResultListView_SelectedIndexChanged()
+        ResultListView.Clear()
+        FindText.Clear()
+        SearchTitleLabel.Focus()
     End Sub
 End Class

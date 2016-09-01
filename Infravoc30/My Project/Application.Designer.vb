@@ -32,12 +32,12 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.InfraVocabulary.MainScreen
+            Me.MainForm = Global.InfraVocabulary.MainForm
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateSplashScreen()
-            Me.SplashScreen = Global.InfraVocabulary.splash
+            Me.SplashScreen = Global.InfraVocabulary.SplashForm
         End Sub
     End Class
 End Namespace

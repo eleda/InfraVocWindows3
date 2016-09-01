@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms
 
-Public Class Settings
+Public Class SettingsDialogForm
     Sub beallitas_mentes()
         Dim bejeloles, e
         ' Close(10)
@@ -9,18 +9,18 @@ Public Class Settings
         '  Form1.filenam.Text = TextBox1.Text
         bejeloles = CheckBox1.Checked
         PrintLine(10, bejeloles)
-        MainScreen.ToolStrip1.Visible = bejeloles
+        MainForm.ToolStrip.Visible = bejeloles
         bejeloles = CheckBox2.Checked
         PrintLine(10, bejeloles)
-        MainScreen.ToolStrip1.Visible = bejeloles
+        MainForm.ToolStrip.Visible = bejeloles
         FileClose(10)
         FileOpen(10, "voclist.dat", OpenMode.Output)
         For e = 0 To ListBox1.Items.Count - 1
             PrintLine(10, ListBox1.Items(e))
         Next
         FileClose(10)
-        MainScreen.ToolStrip1.Visible = CheckBox1.Checked
-        MainScreen.StatusStrip1.Visible = CheckBox2.Checked
+        MainForm.ToolStrip.Visible = CheckBox1.Checked
+        MainForm.StatusStrip.Visible = CheckBox2.Checked
 
     End Sub
     Private Sub OK_Button_Click() Handles OK_Button.Click
@@ -66,9 +66,9 @@ Public Class Settings
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         '        OpenFileDialog1.FileName = ListBox1.Items(ListBox1.SelectedIndex)
 
-        ModifyEntry.ind.Text = ListBox1.SelectedIndex
-        ModifyEntry.TextBox1.Text = ListBox1.Items(ListBox1.SelectedIndex)
-        ModifyEntry.ShowDialog()
+        ModifyEntryDialogForm.ind.Text = ListBox1.SelectedIndex
+        ModifyEntryDialogForm.TextBox1.Text = ListBox1.Items(ListBox1.SelectedIndex)
+        ModifyEntryDialogForm.ShowDialog()
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

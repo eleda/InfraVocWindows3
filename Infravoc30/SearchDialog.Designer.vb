@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class SearchWindow
+Partial Class SearchDialog
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -37,7 +37,7 @@ Partial Class SearchWindow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SearchWindow))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SearchDialog))
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolStripContainer = New System.Windows.Forms.ToolStripContainer()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
@@ -378,7 +378,7 @@ Partial Class SearchWindow
         Me.EditToolStripButton.Size = New System.Drawing.Size(94, 25)
         Me.EditToolStripButton.Text = "&Szerkesztés"
         '
-        'SearchWindow
+        'SearchDialog
         '
         Me.AcceptButton = Me.SearchButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -388,7 +388,7 @@ Partial Class SearchWindow
         Me.Controls.Add(Me.ToolStripContainer)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(200, 250)
-        Me.Name = "SearchWindow"
+        Me.Name = "SearchDialog"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Keresés"
         Me.ToolStripContainer.BottomToolStripPanel.ResumeLayout(False)
