@@ -154,14 +154,8 @@
   <data name="iv_edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iv_edit1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kozta2_Layer 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kozta2_Layer 1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="findmini_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\findmini_1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kozta_Layer 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kozta_Layer 1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allaphat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\allaphat2.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,9 +172,6 @@
   <data name="iv_erase" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iv_erase.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aaarnyekolás féláttestszó1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aaarnyekolás féláttestszó1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="allaphat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\allaphat.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,23 +181,14 @@
   <data name="welcome_shad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\welcome_shad.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aaarnyekolás féláttestszó" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aaarnyekolás féláttestszó.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iv_newword1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iv_newword1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kozta1_Layer 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kozta1_Layer 1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tovabb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tovabb.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="egyebek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\egyebek.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="aaarnyekolás féláttestszó2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aaarnyekolás féláttestszó2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gomini_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gomini_1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -243,9 +225,6 @@
   </data>
   <data name="inffffos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inffffos.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kozta1_Layer 11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kozta1_Layer 11.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iv_edit11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iv_edit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -2,8 +2,7 @@
 
     Dim vocabChanged As Boolean = False
 
-
-    Private Sub ÚjSzóToolStripMenuItem_Click() Handles NewWordToolStripMenuItem.Click
+    Private Sub NewEntry()
         NewEntryDialog.ShowDialog()
     End Sub
 
@@ -54,14 +53,13 @@
             End If
         End If
     End Sub
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Text = My.Application.Info.Title.ToString
-        List1_Click()
-        beallitas()
-        RefreshVocabulary()
+
+    Public Sub New()
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
     End Sub
 
-    Private Sub ÖsszesTörléseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteAllToolStripMenuItem.Click
+    Private Sub DeleteAllWords()
         Dim torole = MsgBox("Valóban törli az összes elemet?", vbQuestion + vbYesNo)
         If torole = vbYes Then
             Try
@@ -72,31 +70,27 @@
             End Try
         End If
     End Sub
-    Public Sub New()
-        ' This call is required by the Windows Form Designer.
-        InitializeComponent()
-    End Sub
 
     Private Sub OKToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OkToolStripMenuItem.Click
         NotifyIcon.Visible() = False
     End Sub
 
-    Private Sub KisméretToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MinimizeToolStripMenuItem.Click
-        If Me.WindowState = FormWindowState.Minimized Then Me.WindowState = FormWindowState.Normal Else Me.WindowState = FormWindowState.Minimized
-    End Sub
     Sub megnyitas()
         RefreshVocabulary()
     End Sub
 
-    Private Sub FrissítésToolStripMenuItem_Click() Handles RefreshToolStripMenuItem.Click
-    End Sub
     Private Sub filenam_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text
     End Sub
-    Private Sub AlapbeállításokToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BasicSettingsToolStripMenuItem.Click
-        SettingsDialogForm.ShowDialog()
+
+    Private Sub ShowSettingsDialog()
+        Dim settingsDlg = New SettingsDialog
+        If settingsDlg.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            ' Save settings
+        End If
     End Sub
-    Sub beallitas()
+
+    Sub LoadSettings()
         Dim StarUpFile As String = "", isToolBarOn, isStatusBarOn As Boolean
         Dim oneFile As String = ""
 
@@ -109,21 +103,22 @@
             Input(10, StarUpFile)
             Input(10, isToolBarOn)
             Input(10, isStatusBarOn)
-            FileNameHiddenTextBox.Text = StarUpFile '<<< 1. BEINDÍTÁSKORI FÁJL
-            SettingsDialogForm.TextBox1.Text = StarUpFile
-            If isToolBarOn Then ToolStrip.Visible = True Else ToolStrip.Visible = False ' <<< LÁTSZIK-E AZ ESZKÖZTÁR?
-            If isToolBarOn Then SettingsDialogForm.CheckBox1.Checked = True Else ToolStrip.Visible = False
-            If isStatusBarOn = True Then StatusStrip.Visible = True Else StatusStrip.Visible = False '<<< LÁTSZIK-E AZ ÁLLAPOTSOR?
-            If isStatusBarOn = True Then SettingsDialogForm.CheckBox2.Checked = True Else SettingsDialogForm.CheckBox2.Checked = False
+            FileNameHiddenTextBox.Text = StarUpFile
+            SettingsDialog.TextBox1.Text = StarUpFile
+            If isToolBarOn Then ToolStrip.Visible = True Else ToolStrip.Visible = False
+            If isToolBarOn Then SettingsDialog.CheckBox1.Checked = True Else ToolStrip.Visible = False
+            If isStatusBarOn = True Then StatusStrip.Visible = True Else StatusStrip.Visible = False
+            If isStatusBarOn = True Then SettingsDialog.CheckBox2.Checked = True Else SettingsDialog.CheckBox2.Checked = False
+            FileClose(10)
 
             ' Load Voclist File
             FileOpen(10, "voclist.dat", OpenMode.Input)
             Do Until EOF(10)
                 Input(10, oneFile)
-                SettingsDialogForm.ListBox1.Items.Clear()
-                ChooseVocabDialogForm.ListBox1.Items.Clear()
-                ChooseVocabDialogForm.ListBox1.Items.Add(oneFile)
-                SettingsDialogForm.ListBox1.Items.Add(oneFile)
+                SettingsDialog.ListBox1.Items.Clear()
+                ChooseVocabDialog.VocabListBox.Items.Clear()
+                ChooseVocabDialog.VocabListBox.Items.Add(oneFile)
+                SettingsDialog.ListBox1.Items.Add(oneFile)
             Loop
 
         Catch ex As Exception
@@ -136,16 +131,6 @@
 
     Private Sub ShowAboutDialog()
         AboutDialog.ShowDialog()
-    End Sub
-
-    Private Sub SzótárKiválasztásaToolStripMenuItem_Click() Handles ChooseVocabToolStripMenuItem.Click
-        SaveVocabulary()
-        RefreshVocabulary()
-        ChooseVocabDialogForm.ShowDialog()
-    End Sub
-
-    Private Sub ÚjElemToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewItemContextToolStripMenuItem.Click
-        ÚjSzóToolStripMenuItem_Click()
     End Sub
 
     Private Sub gomb_atnev_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -164,10 +149,6 @@
         End If
     End Sub
 
-    Private Sub gomb_ujszo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        ÚjSzóToolStripMenuItem_Click()
-    End Sub
-
     Private Sub ShowNewEntryDialog()
         Dim newEntryDialog = New NewEntryDialog
         If newEntryDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -181,7 +162,7 @@
     End Sub
     Private Sub ShowSearchDialog()
         Dim searchDialog = New SearchDialog
-        searchDialog.ShowDialog()
+        searchDialog.Show()
     End Sub
 
     Private Sub List1_SelectedIndexChanged_1() Handles WordsListBox.SelectedIndexChanged
@@ -208,10 +189,10 @@
     Private Sub ÚjSzótárToolStripMenuItem_Click() Handles NewVocabToolStripMenuItem.Click
     End Sub
 
-    Sub szolistament_dialog3bol()
+    Sub SaveWordList()
         FileOpen(10, "voclist.dat", OpenMode.Output)
-        For e = 0 To ChooseVocabDialogForm.ListBox1.Items.Count - 1
-            PrintLine(10, ChooseVocabDialogForm.ListBox1.Items(e))
+        For e = 0 To ChooseVocabDialog.VocabListBox.Items.Count - 1
+            PrintLine(10, ChooseVocabDialog.VocabListBox.Items(e))
         Next
         FileClose(10)
     End Sub
@@ -221,22 +202,32 @@
         If CounterTextBox.Text = 0 Then FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text
     End Sub
 
-    Private Sub ToolStripButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenVocabToolStripButton.Click
-        SzótárKiválasztásaToolStripMenuItem_Click()
-    End Sub
-
-    Private Sub e_mentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveVocabToolStripButton.Click
-        SaveVocabulary()
-    End Sub
-
-    Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewVocabToolStripButton.Click
-        ÚjSzótárToolStripMenuItem_Click()
-    End Sub
-
     Private Sub NewVocabulary()
+        Dim newVocabularyDialog = New NewVocabDialog
         SaveVocabulary()
         RefreshVocabulary()
-        NewVocabDialogForm.ShowDialog()
+        If newVocabularyDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Dim newVocabFileName As String = newVocabularyDialog.VocabNameTextBox.Text + ".voc"
+            Dim setBaseVocab As Boolean = newVocabularyDialog.AddToVocabListCheckBox.Checked
+            Dim addToVocabList As Boolean = newVocabularyDialog.SetAsBaseVocabCheckBox.Checked
+            Try
+                FileOpen(20, newVocabFileName, OpenMode.Output)
+                FileClose(20)
+                FileNameHiddenTextBox.Text = newVocabFileName
+                megnyitas()
+                If setBaseVocab Then
+                    ChooseVocabDialog.VocabListBox.Items.Add(newVocabFileName)
+                    SettingsDialog.ListBox1.Items.Add(newVocabFileName)
+                    SaveWordList()
+                End If
+                If addToVocabList Then
+                    SettingsDialog.TextBox1.Text = newVocabFileName
+                    SettingsDialog.SaveSettings()
+                End If
+            Catch ex As Exception
+                MsgBox("Rossz név.", MsgBoxStyle.Exclamation)
+            End Try
+        End If
     End Sub
 
     Private Sub SaveVocabulary()
@@ -270,25 +261,12 @@
         vocabChanged = False
     End Sub
 
-    Private Sub ExitToolItem_Click(sender As Object, e As EventArgs) Handles ExitToolItem.Click
-        Form1_FormClosing()
-        End
-    End Sub
-
-    Private Sub atnevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RenameToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub EditWordToolStripButton_Click(sender As Object, e As EventArgs) Handles EditWordToolStripButton.Click
         ShowRewriteDialog()
     End Sub
 
     Private Sub RenameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RenameToolStripMenuItem.Click
         ShowRewriteDialog()
-    End Sub
-
-    Private Sub ÚjSzóToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewWordToolStripMenuItem.Click
-
     End Sub
 
     Private Sub NewWordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewWordToolStripMenuItem.Click
@@ -319,10 +297,6 @@
         DeleteSelectedWord()
     End Sub
 
-    Private Sub TörlésToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         DeleteSelectedWord()
     End Sub
@@ -335,11 +309,77 @@
         ShowAboutDialog()
     End Sub
 
-    Private Sub ÚjSzótárToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub NewVocabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewVocabToolStripMenuItem.Click
         NewVocabulary()
+    End Sub
+
+    Private Sub ChooseVocabulary()
+        SaveVocabulary()
+        RefreshVocabulary()
+        Dim chooseVocabDlg = New ChooseVocabDialog
+        If chooseVocabDlg.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Try
+                FileNameHiddenTextBox.Text = chooseVocabDlg.chosenFileName
+                megnyitas()
+            Catch ex As Exception
+                MsgBox("Rossz név.", MsgBoxStyle.Exclamation)
+            End Try
+        End If
+    End Sub
+
+    Private Sub ChooseVocabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChooseVocabToolStripMenuItem.Click
+        ChooseVocabulary()
+    End Sub
+
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+        SaveVocabulary()
+    End Sub
+
+    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
+        RefreshVocabulary()
+    End Sub
+
+    Private Sub Minimize()
+        If Me.WindowState = FormWindowState.Minimized Then Me.WindowState = FormWindowState.Normal Else Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub ExitProgram()
+        Form1_FormClosing()
+        End
+    End Sub
+
+    Private Sub MinimizeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizeToolStripMenuItem.Click
+        Minimize()
+    End Sub
+
+    Private Sub ExitToolItem_Click(sender As Object, e As EventArgs) Handles ExitToolItem.Click
+        ExitProgram()
+    End Sub
+
+    Private Sub DeleteAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteAllToolStripMenuItem.Click
+        DeleteAllWords()
+    End Sub
+
+    Private Sub BasicSettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BasicSettingsToolStripMenuItem.Click
+        ShowSettingsDialog()
+    End Sub
+
+    Private Sub NewItemContextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewItemContextToolStripMenuItem.Click
+        ShowNewEntryDialog()
+    End Sub
+
+    Private Sub SearchContextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchContextToolStripMenuItem.Click
+        ShowSearchDialog()
+    End Sub
+
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Text = My.Application.Info.Title.ToString
+        List1_Click()
+        LoadSettings()
+        RefreshVocabulary()
+    End Sub
+
+    Private Sub OpenVocabToolStripButton_Click(sender As Object, e As EventArgs) Handles OpenVocabToolStripButton.Click
+        ChooseVocabulary()
     End Sub
 End Class

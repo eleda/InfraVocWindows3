@@ -93,52 +93,48 @@ Public Class SearchDialog
     End Sub
 
     Private Sub SearchButton_Click() Handles SearchButton.Click
-        If FindText.Text = "" Then MsgBox("Nem írt be szöveget.", MsgBoxStyle.Information) : Exit Sub
+        Dim textPart As String, findFor As String = FindText.Text.Trim
+        If findFor = "" Then
+            MsgBox("Nem írt be szöveget.", MsgBoxStyle.Information)
+            Exit Sub
+        ElseIf findFor.Contains("=") Then
+            MsgBox("Érvénytelen kifejezés.", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+        Dim currentIndex As Integer = MainForm.WordsListBox.SelectedIndex
+        Dim resultCount As Integer = 0
+        Dim searchEveryWhere As Boolean = SearchEverywhereCheckBox.Checked
         EditToolStripButton.Enabled = True
         GoToolStripButton.Enabled = True
         ResultListView.Clear()
-        Dim go, k
-        Dim eda, e, keresszov$, o
-        o = 0
-        eda = MainForm.WordsListBox.SelectedIndex
-
-        For e = 0 To MainForm.WordsListBox.Items.Count - 1
-            If SearchEverywhereCheckBox.Checked = True Then
-                For k = 1 To Len(MainForm.WordsListBox.Items(e)) - Len(FindText.Text)
-                    keresszov$ = LCase$(Mid$(MainForm.WordsListBox.Items(e), k, Len(FindText.Text)))
-                    If keresszov$ = LCase$(FindText.Text) Then
-                        ResultListView.Items.Add(MainForm.WordsListBox.Items(e), 3)
-                        ResultListView.Items(o).Name = e
-                        o = o + 1
-                        GoTo bbb
+        For i = 0 To MainForm.WordsListBox.Items.Count - 1
+            If searchEveryWhere Then
+                For j = 1 To Len(MainForm.WordsListBox.Items(i)) - Len(findFor)
+                    textPart = LCase(Mid(MainForm.WordsListBox.Items(i), j, Len(findFor)))
+                    If textPart = LCase(findFor) Then
+                        ResultListView.Items.Add(MainForm.WordsListBox.Items(i), 3)
+                        ResultListView.Items(resultCount).Name = i
+                        resultCount += 1
                     End If
-                Next k
-
+                Next
             Else
-                keresszov$ = LCase$(Mid$(MainForm.WordsListBox.Items(e), 1, Len(FindText.Text)))
-                If keresszov$ = LCase$(FindText.Text) Then
-                    ResultListView.Items.Add(MainForm.WordsListBox.Items(e), 3)
-                    ResultListView.Items(o).Name = e
-                    o = o + 1
+                textPart = LCase(Mid(MainForm.WordsListBox.Items(i), 1, Len(findFor)))
+                If textPart = LCase(findFor) Then
+                    ResultListView.Items.Add(MainForm.WordsListBox.Items(i), 3)
+                    ResultListView.Items(resultCount).Name = i
+                    resultCount += 1
                 End If
             End If
-bbb:
-        Next e
-
-        If ResultListView.Items.Count <> 0 Then
-            For go = 0 To ResultListView.Items.Count
-            Next go
-        End If
-
-        MainForm.WordsListBox.SelectedIndex = eda
+        Next
+        MainForm.WordsListBox.SelectedIndex = currentIndex
         If ResultListView.Items.Count = 0 Then
             MsgBox("Nem található!", vbInformation)
             FindText.Focus()
             EditToolStripButton.Enabled = False
             GoToolStripButton.Enabled = False
-            Exit Sub
+        Else
+            ResultListView.Focus()
         End If
-        ResultListView.Focus()
     End Sub
 
     Private Sub GoButton_Click() Handles GoToolStripButton.Click

@@ -1,7 +1,7 @@
 ﻿Imports System.Windows.Forms
 
-Public Class SettingsDialogForm
-    Sub beallitas_mentes()
+Public Class SettingsDialog
+    Sub SaveSettings()
         Dim bejeloles, e
         ' Close(10)
         FileOpen(10, "options.dat", OpenMode.Output)
@@ -24,7 +24,7 @@ Public Class SettingsDialogForm
 
     End Sub
     Private Sub OK_Button_Click() Handles OK_Button.Click
-        beallitas_mentes()
+        SaveSettings()
 
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()

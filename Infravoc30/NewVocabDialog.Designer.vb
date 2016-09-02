@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class NewVocabDialogForm
+Partial Class NewVocabDialog
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,10 +25,10 @@ Partial Class NewVocabDialogForm
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.VocabNameLabel = New System.Windows.Forms.Label()
+        Me.VocabNameTextBox = New System.Windows.Forms.TextBox()
+        Me.AddToVocabListCheckBox = New System.Windows.Forms.CheckBox()
+        Me.SetAsBaseVocabCheckBox = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,6 +50,7 @@ Partial Class NewVocabDialogForm
         'OK_Button
         '
         Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.OK_Button.Enabled = False
         Me.OK_Button.Location = New System.Drawing.Point(3, 3)
         Me.OK_Button.Name = "OK_Button"
         Me.OK_Button.Size = New System.Drawing.Size(67, 23)
@@ -66,59 +67,59 @@ Partial Class NewVocabDialogForm
         Me.Cancel_Button.TabIndex = 5
         Me.Cancel_Button.Text = "Mégse"
         '
-        'Label1
+        'VocabNameLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Szószedet neve:"
+        Me.VocabNameLabel.AutoSize = True
+        Me.VocabNameLabel.Location = New System.Drawing.Point(10, 15)
+        Me.VocabNameLabel.Name = "VocabNameLabel"
+        Me.VocabNameLabel.Size = New System.Drawing.Size(88, 13)
+        Me.VocabNameLabel.TabIndex = 0
+        Me.VocabNameLabel.Text = "Szószedet neve:"
         '
-        'TextBox1
+        'VocabNameTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(99, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(321, 22)
-        Me.TextBox1.TabIndex = 1
+        Me.VocabNameTextBox.Location = New System.Drawing.Point(99, 12)
+        Me.VocabNameTextBox.Name = "VocabNameTextBox"
+        Me.VocabNameTextBox.Size = New System.Drawing.Size(321, 22)
+        Me.VocabNameTextBox.TabIndex = 1
         '
-        'CheckBox1
+        'AddToVocabListCheckBox
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(167, 49)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(142, 17)
-        Me.CheckBox1.TabIndex = 3
-        Me.CheckBox1.Text = "&Felvétel a szótárlistába"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.AddToVocabListCheckBox.AutoSize = True
+        Me.AddToVocabListCheckBox.Location = New System.Drawing.Point(167, 49)
+        Me.AddToVocabListCheckBox.Name = "AddToVocabListCheckBox"
+        Me.AddToVocabListCheckBox.Size = New System.Drawing.Size(142, 17)
+        Me.AddToVocabListCheckBox.TabIndex = 3
+        Me.AddToVocabListCheckBox.Text = "&Felvétel a szótárlistába"
+        Me.AddToVocabListCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'SetAsBaseVocabCheckBox
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(13, 49)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(148, 17)
-        Me.CheckBox2.TabIndex = 2
-        Me.CheckBox2.Text = "&Beállítás alapszótárként"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.SetAsBaseVocabCheckBox.AutoSize = True
+        Me.SetAsBaseVocabCheckBox.Location = New System.Drawing.Point(13, 49)
+        Me.SetAsBaseVocabCheckBox.Name = "SetAsBaseVocabCheckBox"
+        Me.SetAsBaseVocabCheckBox.Size = New System.Drawing.Size(148, 17)
+        Me.SetAsBaseVocabCheckBox.TabIndex = 2
+        Me.SetAsBaseVocabCheckBox.Text = "&Beállítás alapszótárként"
+        Me.SetAsBaseVocabCheckBox.UseVisualStyleBackColor = True
         '
-        'NewVocab
+        'NewVocabDialog
         '
         Me.AcceptButton = Me.OK_Button
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(435, 128)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.SetAsBaseVocabCheckBox)
+        Me.Controls.Add(Me.AddToVocabListCheckBox)
+        Me.Controls.Add(Me.VocabNameTextBox)
+        Me.Controls.Add(Me.VocabNameLabel)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "NewVocab"
+        Me.Name = "NewVocabDialog"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Új szószedet"
@@ -130,9 +131,9 @@ Partial Class NewVocabDialogForm
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents OK_Button As System.Windows.Forms.Button
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents VocabNameLabel As System.Windows.Forms.Label
+    Friend WithEvents VocabNameTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents AddToVocabListCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents SetAsBaseVocabCheckBox As System.Windows.Forms.CheckBox
 
 End Class

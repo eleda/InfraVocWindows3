@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InfraVocabulary", "Infravoc30\InfraVocabulary.vbproj", "{B9A915F8-BA3B-4CF3-BD21-EBEF522FB76E}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InfraVocabularyWindows", "Infravoc30\InfraVocabularyWindows.vbproj", "{B9A915F8-BA3B-4CF3-BD21-EBEF522FB76E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
