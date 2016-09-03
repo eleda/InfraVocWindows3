@@ -41,8 +41,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>hu-HU</TargetCulture>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>3.6.620.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>3.5.930.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>false</BootstrapperEnabled>
@@ -219,7 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="default.voc" />
     <None Include="Infravoc30_1_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
@@ -355,8 +354,19 @@
     <None Include="Resources\infravocabulary3_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="infravocabulary3_icon.ico" />
     <Content Include="InfraVocIcon.ico" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\exit1.png" />
+    <None Include="Resources\searchwindow.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\savefile.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\openfile.png" />
+    <None Include="Resources\newfile.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\about1.png" />
+    <None Include="Resources\about.png" />
     <None Include="Resources\InfraVocIcon.png" />
     <None Include="Resources\StartupIcon.bmp" />
     <None Include="Resources\floppy_1mini_1.png" />

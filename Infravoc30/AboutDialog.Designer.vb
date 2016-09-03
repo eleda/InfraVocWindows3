@@ -34,7 +34,7 @@ Partial Class AboutDialog
         'TitleLbl
         '
         Me.TitleLbl.BackColor = System.Drawing.Color.Transparent
-        Me.TitleLbl.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.TitleLbl.Font = New System.Drawing.Font("Segoe Print", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TitleLbl.Location = New System.Drawing.Point(95, 20)
         Me.TitleLbl.Name = "TitleLbl"
         Me.TitleLbl.Size = New System.Drawing.Size(233, 72)

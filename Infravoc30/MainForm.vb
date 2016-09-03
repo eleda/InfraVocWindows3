@@ -1,6 +1,7 @@
 ﻿Public Class MainForm
 
     Dim vocabChanged As Boolean = False
+    Dim currentFileName As String = ""
 
     Private Sub NewEntry()
         NewEntryDialog.ShowDialog()
@@ -42,7 +43,7 @@
 
     Private Sub Form1_FormClosing() Handles Me.FormClosing
         If vocabChanged Then
-            Dim a = MsgBox("Kívánja menteni '" & FileNameHiddenTextBox.Text & "' szószedetet?", MsgBoxStyle.Question + MsgBoxStyle.YesNo)
+            Dim a = MsgBox("Kívánja menteni '" & currentFileName & "' szószedetet?", MsgBoxStyle.Question + MsgBoxStyle.YesNo)
             If a = vbYes Then
                 SaveVocabulary()
                 End
@@ -80,7 +81,7 @@
     End Sub
 
     Private Sub filenam_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text
+        FilenameToolStripLabel.Text = currentFileName
     End Sub
 
     Private Sub ShowSettingsDialog()
@@ -103,7 +104,7 @@
             Input(10, StarUpFile)
             Input(10, isToolBarOn)
             Input(10, isStatusBarOn)
-            FileNameHiddenTextBox.Text = StarUpFile
+            currentFileName = StarUpFile
             SettingsDialog.TextBox1.Text = StarUpFile
             If isToolBarOn Then ToolStrip.Visible = True Else ToolStrip.Visible = False
             If isToolBarOn Then SettingsDialog.CheckBox1.Checked = True Else ToolStrip.Visible = False
@@ -178,11 +179,11 @@
         End Try
     End Sub
 
-    Private Sub filenam_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FileNameHiddenTextBox.TextChanged
-        If CounterTextBox.Text = 1 Then
-            FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text + "*"
+    Private Sub UpdateTitle()
+        If vocabChanged Then
+            FilenameToolStripLabel.Text = currentFileName + "*"
         Else
-            FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text
+            FilenameToolStripLabel.Text = currentFileName
         End If
     End Sub
 
@@ -197,11 +198,6 @@
         FileClose(10)
     End Sub
 
-    Private Sub ado_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CounterTextBox.TextChanged
-        If CounterTextBox.Text = 1 Then FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text + "*"
-        If CounterTextBox.Text = 0 Then FilenameToolStripLabel.Text = FileNameHiddenTextBox.Text
-    End Sub
-
     Private Sub NewVocabulary()
         Dim newVocabularyDialog = New NewVocabDialog
         SaveVocabulary()
@@ -213,7 +209,7 @@
             Try
                 FileOpen(20, newVocabFileName, OpenMode.Output)
                 FileClose(20)
-                FileNameHiddenTextBox.Text = newVocabFileName
+                currentFileName = newVocabFileName
                 megnyitas()
                 If setBaseVocab Then
                     ChooseVocabDialog.VocabListBox.Items.Add(newVocabFileName)
@@ -232,12 +228,12 @@
 
     Private Sub SaveVocabulary()
         FileClose(1)
-        FileOpen(1, FileNameHiddenTextBox.Text, OpenMode.Output)
+        FileOpen(1, currentFileName, OpenMode.Output)
         For e = 0 To WordsListBox.Items.Count - 1
             PrintLine(1, WordsListBox.Items(e))
         Next e
         FileClose(1)
-        CounterTextBox.Text = 0
+        vocabChanged = False
         RefreshVocabulary()
     End Sub
 
@@ -245,7 +241,7 @@
         Dim currentLine As String = ""
         Try
             WordsListBox.Items.Clear()
-            FileOpen(1, FileNameHiddenTextBox.Text, OpenMode.Input)
+            FileOpen(1, currentFileName, OpenMode.Input)
             Do Until EOF(1)
                 Input(1, currentLine)
                 'MsgBox(elem$)
@@ -255,7 +251,7 @@
         Catch ex As Exception
             NotifyIcon.ShowBalloonTip(73000, "Infra vocabulary", "Először használja az Infra Vocabulary programot", ToolTipIcon.Info)
             FileClose()
-            FileOpen(1, FileNameHiddenTextBox.Text, OpenMode.Output)
+            FileOpen(1, currentFileName, OpenMode.Output)
             FileClose(1)
         End Try
         vocabChanged = False
@@ -319,7 +315,7 @@
         Dim chooseVocabDlg = New ChooseVocabDialog
         If chooseVocabDlg.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Try
-                FileNameHiddenTextBox.Text = chooseVocabDlg.chosenFileName
+                currentFileName = chooseVocabDlg.chosenFileName
                 megnyitas()
             Catch ex As Exception
                 MsgBox("Rossz név.", MsgBoxStyle.Exclamation)
@@ -381,5 +377,9 @@
 
     Private Sub OpenVocabToolStripButton_Click(sender As Object, e As EventArgs) Handles OpenVocabToolStripButton.Click
         ChooseVocabulary()
+    End Sub
+
+    Private Sub ÚjSzótárToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewVocabToolStripMenuItem.Click
+
     End Sub
 End Class
