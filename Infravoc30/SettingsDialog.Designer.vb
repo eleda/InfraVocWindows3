@@ -23,48 +23,47 @@ Partial Class SettingsDialog
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
-        Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Tab_alap = New System.Windows.Forms.TabPage()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Tabse = New System.Windows.Forms.TabControl()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.Tab_alap.SuspendLayout()
-        Me.Tabse.SuspendLayout()
+        Me.StartupOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.ColorDialog = New System.Windows.Forms.ColorDialog()
+        Me.FontDialog = New System.Windows.Forms.FontDialog()
+        Me.VocListOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.VocabListTabPage = New System.Windows.Forms.TabPage()
+        Me.DeleteButton = New System.Windows.Forms.Button()
+        Me.ModifyButton = New System.Windows.Forms.Button()
+        Me.NewItemButton = New System.Windows.Forms.Button()
+        Me.VocListBox = New System.Windows.Forms.ListBox()
+        Me.BaseTabPage = New System.Windows.Forms.TabPage()
+        Me.StatusBarCheckBox = New System.Windows.Forms.CheckBox()
+        Me.ToolbarCheckBox = New System.Windows.Forms.CheckBox()
+        Me.AddToVocabListButton = New System.Windows.Forms.Button()
+        Me.BrowseButton = New System.Windows.Forms.Button()
+        Me.StartupOpenTextBox = New System.Windows.Forms.TextBox()
+        Me.StartupOpenLabel = New System.Windows.Forms.Label()
+        Me.TabControl = New System.Windows.Forms.TabControl()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TableLayoutPanel.SuspendLayout()
+        Me.VocabListTabPage.SuspendLayout()
+        Me.BaseTabPage.SuspendLayout()
+        Me.TabControl.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'TableLayoutPanel
         '
-        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(283, 280)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(146, 29)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.TableLayoutPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel.ColumnCount = 2
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel.Controls.Add(Me.OK_Button, 0, 0)
+        Me.TableLayoutPanel.Controls.Add(Me.Cancel_Button, 1, 0)
+        Me.TableLayoutPanel.Location = New System.Drawing.Point(283, 280)
+        Me.TableLayoutPanel.Name = "TableLayoutPanel"
+        Me.TableLayoutPanel.RowCount = 1
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(146, 29)
+        Me.TableLayoutPanel.TabIndex = 0
         '
         'OK_Button
         '
@@ -85,203 +84,193 @@ Partial Class SettingsDialog
         Me.Cancel_Button.TabIndex = 2
         Me.Cancel_Button.Text = " Mégse"
         '
-        'OpenFileDialog1
+        'StartupOpenFileDialog
         '
-        Me.OpenFileDialog1.DefaultExt = "*.voc"
-        Me.OpenFileDialog1.Filter = """Infra Vocabulary 3x fájlok|*.voc|Régi Infra Vocabulary fájlok|words.txt|Minden f" &
+        Me.StartupOpenFileDialog.DefaultExt = "*.voc"
+        Me.StartupOpenFileDialog.Filter = """Infra Vocabulary 3x fájlok|*.voc|Régi Infra Vocabulary fájlok|words.txt|Minden f" &
     "ájl|*.*"""
         '
-        'OpenFileDialog3
+        'VocListOpenFileDialog
         '
-        Me.OpenFileDialog3.DefaultExt = "*.voc"
-        Me.OpenFileDialog3.Filter = """Infra Vocabulary 3x fájlok|*.voc|Régi Infra Vocabulary fájlok|words.txt|Minden f" &
+        Me.VocListOpenFileDialog.DefaultExt = "*.voc"
+        Me.VocListOpenFileDialog.Filter = """Infra Vocabulary 3x fájlok|*.voc|Régi Infra Vocabulary fájlok|words.txt|Minden f" &
     "ájl|*.*"""
         '
-        'TabPage1
+        'VocabListTabPage
         '
-        Me.TabPage1.Controls.Add(Me.Button7)
-        Me.TabPage1.Controls.Add(Me.Button6)
-        Me.TabPage1.Controls.Add(Me.Button5)
-        Me.TabPage1.Controls.Add(Me.ListBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(408, 231)
-        Me.TabPage1.TabIndex = 2
-        Me.TabPage1.Text = "Szótárlista"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.VocabListTabPage.Controls.Add(Me.DeleteButton)
+        Me.VocabListTabPage.Controls.Add(Me.ModifyButton)
+        Me.VocabListTabPage.Controls.Add(Me.NewItemButton)
+        Me.VocabListTabPage.Controls.Add(Me.VocListBox)
+        Me.VocabListTabPage.Location = New System.Drawing.Point(4, 22)
+        Me.VocabListTabPage.Name = "VocabListTabPage"
+        Me.VocabListTabPage.Padding = New System.Windows.Forms.Padding(3)
+        Me.VocabListTabPage.Size = New System.Drawing.Size(408, 231)
+        Me.VocabListTabPage.TabIndex = 2
+        Me.VocabListTabPage.Text = "Szótárlista"
+        Me.VocabListTabPage.UseVisualStyleBackColor = True
         '
-        'Button7
+        'DeleteButton
         '
-        Me.Button7.Location = New System.Drawing.Point(289, 197)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(100, 24)
-        Me.Button7.TabIndex = 3
-        Me.Button7.Text = "&Töröl"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.DeleteButton.Location = New System.Drawing.Point(289, 197)
+        Me.DeleteButton.Name = "DeleteButton"
+        Me.DeleteButton.Size = New System.Drawing.Size(100, 24)
+        Me.DeleteButton.TabIndex = 3
+        Me.DeleteButton.Text = "&Törlés"
+        Me.DeleteButton.UseVisualStyleBackColor = True
         '
-        'Button6
+        'ModifyButton
         '
-        Me.Button6.Location = New System.Drawing.Point(156, 197)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(111, 24)
-        Me.Button6.TabIndex = 2
-        Me.Button6.Text = "&Módosít..."
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.ModifyButton.Location = New System.Drawing.Point(156, 197)
+        Me.ModifyButton.Name = "ModifyButton"
+        Me.ModifyButton.Size = New System.Drawing.Size(111, 24)
+        Me.ModifyButton.TabIndex = 2
+        Me.ModifyButton.Text = "&Módosítás..."
+        Me.ModifyButton.UseVisualStyleBackColor = True
         '
-        'Button5
+        'NewItemButton
         '
-        Me.Button5.Location = New System.Drawing.Point(18, 197)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(119, 24)
-        Me.Button5.TabIndex = 1
-        Me.Button5.Text = "&Új elem..."
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.NewItemButton.Location = New System.Drawing.Point(18, 197)
+        Me.NewItemButton.Name = "NewItemButton"
+        Me.NewItemButton.Size = New System.Drawing.Size(119, 24)
+        Me.NewItemButton.TabIndex = 1
+        Me.NewItemButton.Text = "&Új elem..."
+        Me.NewItemButton.UseVisualStyleBackColor = True
         '
-        'ListBox1
+        'VocListBox
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(16, 13)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(373, 173)
-        Me.ListBox1.TabIndex = 0
+        Me.VocListBox.FormattingEnabled = True
+        Me.VocListBox.Location = New System.Drawing.Point(16, 13)
+        Me.VocListBox.Name = "VocListBox"
+        Me.VocListBox.Size = New System.Drawing.Size(373, 173)
+        Me.VocListBox.TabIndex = 0
         '
-        'Tab_alap
+        'BaseTabPage
         '
-        Me.Tab_alap.Controls.Add(Me.CheckBox2)
-        Me.Tab_alap.Controls.Add(Me.CheckBox1)
-        Me.Tab_alap.Controls.Add(Me.Button2)
-        Me.Tab_alap.Controls.Add(Me.Label3)
-        Me.Tab_alap.Controls.Add(Me.Button1)
-        Me.Tab_alap.Controls.Add(Me.TextBox1)
-        Me.Tab_alap.Controls.Add(Me.Label1)
-        Me.Tab_alap.Location = New System.Drawing.Point(4, 22)
-        Me.Tab_alap.Name = "Tab_alap"
-        Me.Tab_alap.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_alap.Size = New System.Drawing.Size(408, 231)
-        Me.Tab_alap.TabIndex = 0
-        Me.Tab_alap.Text = "Alap"
-        Me.Tab_alap.UseVisualStyleBackColor = True
+        Me.BaseTabPage.Controls.Add(Me.StatusBarCheckBox)
+        Me.BaseTabPage.Controls.Add(Me.ToolbarCheckBox)
+        Me.BaseTabPage.Controls.Add(Me.AddToVocabListButton)
+        Me.BaseTabPage.Controls.Add(Me.BrowseButton)
+        Me.BaseTabPage.Controls.Add(Me.StartupOpenTextBox)
+        Me.BaseTabPage.Controls.Add(Me.StartupOpenLabel)
+        Me.BaseTabPage.Location = New System.Drawing.Point(4, 22)
+        Me.BaseTabPage.Name = "BaseTabPage"
+        Me.BaseTabPage.Padding = New System.Windows.Forms.Padding(3)
+        Me.BaseTabPage.Size = New System.Drawing.Size(408, 231)
+        Me.BaseTabPage.TabIndex = 0
+        Me.BaseTabPage.Text = "Alap"
+        Me.BaseTabPage.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'StatusBarCheckBox
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(20, 146)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox2.TabIndex = 5
-        Me.CheckBox2.Text = "&Állapotsor"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.StatusBarCheckBox.AutoSize = True
+        Me.StatusBarCheckBox.Location = New System.Drawing.Point(20, 146)
+        Me.StatusBarCheckBox.Name = "StatusBarCheckBox"
+        Me.StatusBarCheckBox.Size = New System.Drawing.Size(79, 17)
+        Me.StatusBarCheckBox.TabIndex = 5
+        Me.StatusBarCheckBox.Text = "&Állapotsor"
+        Me.StatusBarCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'ToolbarCheckBox
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(20, 123)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(74, 17)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "&Eszköztár"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.ToolbarCheckBox.AutoSize = True
+        Me.ToolbarCheckBox.Location = New System.Drawing.Point(20, 123)
+        Me.ToolbarCheckBox.Name = "ToolbarCheckBox"
+        Me.ToolbarCheckBox.Size = New System.Drawing.Size(74, 17)
+        Me.ToolbarCheckBox.TabIndex = 4
+        Me.ToolbarCheckBox.Text = "&Eszköztár"
+        Me.ToolbarCheckBox.UseVisualStyleBackColor = True
         '
-        'Button2
+        'AddToVocabListButton
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 73)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(151, 24)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "&Felvétel a szótárlista közé"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.AddToVocabListButton.Location = New System.Drawing.Point(20, 81)
+        Me.AddToVocabListButton.Name = "AddToVocabListButton"
+        Me.AddToVocabListButton.Size = New System.Drawing.Size(151, 24)
+        Me.AddToVocabListButton.TabIndex = 3
+        Me.AddToVocabListButton.Text = "&Felvétel a szótárlista közé"
+        Me.AddToVocabListButton.UseVisualStyleBackColor = True
         '
-        'Label3
+        'BrowseButton
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 73)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(0, 13)
-        Me.Label3.TabIndex = 3
+        Me.BrowseButton.Location = New System.Drawing.Point(310, 47)
+        Me.BrowseButton.Name = "BrowseButton"
+        Me.BrowseButton.Size = New System.Drawing.Size(85, 24)
+        Me.BrowseButton.TabIndex = 2
+        Me.BrowseButton.Text = "Tallózás..."
+        Me.BrowseButton.UseVisualStyleBackColor = True
         '
-        'Button1
+        'StartupOpenTextBox
         '
-        Me.Button1.Location = New System.Drawing.Point(302, 39)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(85, 24)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Tallóz..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.StartupOpenTextBox.Location = New System.Drawing.Point(21, 47)
+        Me.StartupOpenTextBox.Name = "StartupOpenTextBox"
+        Me.StartupOpenTextBox.Size = New System.Drawing.Size(278, 22)
+        Me.StartupOpenTextBox.TabIndex = 1
         '
-        'TextBox1
+        'StartupOpenLabel
         '
-        Me.TextBox1.Location = New System.Drawing.Point(13, 39)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(278, 22)
-        Me.TextBox1.TabIndex = 1
+        Me.StartupOpenLabel.AutoSize = True
+        Me.StartupOpenLabel.Location = New System.Drawing.Point(17, 24)
+        Me.StartupOpenLabel.Name = "StartupOpenLabel"
+        Me.StartupOpenLabel.Size = New System.Drawing.Size(222, 13)
+        Me.StartupOpenLabel.TabIndex = 0
+        Me.StartupOpenLabel.Text = "Indításkor az alábbi szótárfájl megnyitása:"
         '
-        'Label1
+        'TabControl
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(222, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Indításkor az alábbi szótárfájl megnyitása:"
+        Me.TabControl.Controls.Add(Me.BaseTabPage)
+        Me.TabControl.Controls.Add(Me.VocabListTabPage)
+        Me.TabControl.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl.Name = "TabControl"
+        Me.TabControl.SelectedIndex = 0
+        Me.TabControl.Size = New System.Drawing.Size(416, 257)
+        Me.TabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.TabControl.TabIndex = 0
         '
-        'Tabse
-        '
-        Me.Tabse.Controls.Add(Me.Tab_alap)
-        Me.Tabse.Controls.Add(Me.TabPage1)
-        Me.Tabse.Location = New System.Drawing.Point(12, 12)
-        Me.Tabse.Name = "Tabse"
-        Me.Tabse.SelectedIndex = 0
-        Me.Tabse.Size = New System.Drawing.Size(416, 257)
-        Me.Tabse.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.Tabse.TabIndex = 0
-        '
-        'Settings
+        'SettingsDialog
         '
         Me.AcceptButton = Me.OK_Button
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(441, 316)
-        Me.Controls.Add(Me.Tabse)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.TabControl)
+        Me.Controls.Add(Me.TableLayoutPanel)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Settings"
+        Me.Name = "SettingsDialog"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Beállítások"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.Tab_alap.ResumeLayout(False)
-        Me.Tab_alap.PerformLayout()
-        Me.Tabse.ResumeLayout(False)
+        Me.TableLayoutPanel.ResumeLayout(False)
+        Me.VocabListTabPage.ResumeLayout(False)
+        Me.BaseTabPage.ResumeLayout(False)
+        Me.BaseTabPage.PerformLayout()
+        Me.TabControl.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents OK_Button As System.Windows.Forms.Button
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents ColorDialog1 As System.Windows.Forms.ColorDialog
-    Friend WithEvents FontDialog1 As System.Windows.Forms.FontDialog
-    Friend WithEvents OpenFileDialog3 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
-    Friend WithEvents Tab_alap As System.Windows.Forms.TabPage
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Tabse As System.Windows.Forms.TabControl
-    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents StartupOpenFileDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ColorDialog As System.Windows.Forms.ColorDialog
+    Friend WithEvents FontDialog As System.Windows.Forms.FontDialog
+    Friend WithEvents VocListOpenFileDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents VocabListTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents DeleteButton As System.Windows.Forms.Button
+    Friend WithEvents ModifyButton As System.Windows.Forms.Button
+    Friend WithEvents NewItemButton As System.Windows.Forms.Button
+    Friend WithEvents VocListBox As System.Windows.Forms.ListBox
+    Friend WithEvents BaseTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents StatusBarCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents ToolbarCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents AddToVocabListButton As System.Windows.Forms.Button
+    Friend WithEvents BrowseButton As System.Windows.Forms.Button
+    Friend WithEvents StartupOpenTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents StartupOpenLabel As System.Windows.Forms.Label
+    Friend WithEvents TabControl As System.Windows.Forms.TabControl
+    Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
 
 End Class

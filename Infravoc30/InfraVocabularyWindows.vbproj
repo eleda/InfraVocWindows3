@@ -22,7 +22,7 @@
     <ManifestKeyFile>Infravoc30_1_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
-    <ApplicationIcon>InfraVocIcon.ico</ApplicationIcon>
+    <ApplicationIcon>infravocicon3_iFz_icon.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -251,55 +251,10 @@
     <None Include="Resources\iv_newword1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\aaarnyekolás féláttestszó.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\info_shad_down.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\welcome_shad.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rolhirshad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\aaarnyekolás féláttestszó1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\info_title21.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\allaphat.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\allaphat1.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\torvleftsad.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\infrprogbar2.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\allaphat2.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\left_side_1a.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\aaarnyekolás féláttestszó2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\archiv_shad_down.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\torv_shad_mini.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tab2.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LiniaMaxorHirhozo_vonal.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maxoronline.gif" />
@@ -342,9 +297,6 @@
     <None Include="Resources\logo_ivocgood.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\inffffos.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\magni.png" />
   </ItemGroup>
   <ItemGroup>
@@ -355,6 +307,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="InfraVocIcon.ico" />
+    <Content Include="infravocicon3_iFz_icon.ico" />
+    <None Include="Resources\InfraVocIcon3.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\exit1.png" />
     <None Include="Resources\searchwindow.png" />
@@ -376,13 +330,6 @@
     <None Include="Resources\iconviewmini_1.png" />
     <None Include="Resources\findmini_1.png" />
     <None Include="Resources\ex_1.png" />
-    <None Include="Resources\keresod_1.jpg" />
-    <None Include="Resources\egyebek.bmp" />
-    <None Include="Resources\tovabb.bmp" />
-    <None Include="Resources\kozta1_Layer 11.jpg" />
-    <None Include="Resources\kozta2_Layer 1.jpg" />
-    <None Include="Resources\kozta1_Layer 1.jpg" />
-    <None Include="Resources\kozta_Layer 1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

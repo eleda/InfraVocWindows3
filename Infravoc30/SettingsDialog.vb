@@ -1,31 +1,49 @@
 ﻿Imports System.Windows.Forms
 
-Public Class SettingsDialog
-    Sub SaveSettings()
-        Dim bejeloles, e
-        ' Close(10)
-        FileOpen(10, "options.dat", OpenMode.Output)
-        PrintLine(10, TextBox1.Text)
-        '  Form1.filenam.Text = TextBox1.Text
-        bejeloles = CheckBox1.Checked
-        PrintLine(10, bejeloles)
-        MainForm.ToolStrip.Visible = bejeloles
-        bejeloles = CheckBox2.Checked
-        PrintLine(10, bejeloles)
-        MainForm.ToolStrip.Visible = bejeloles
-        FileClose(10)
-        FileOpen(10, "voclist.dat", OpenMode.Output)
-        For e = 0 To ListBox1.Items.Count - 1
-            PrintLine(10, ListBox1.Items(e))
-        Next
-        FileClose(10)
-        MainForm.ToolStrip.Visible = CheckBox1.Checked
-        MainForm.StatusStrip.Visible = CheckBox2.Checked
 
+Public Class SettingsDialog
+    Const OPTIONS_FILE As String = "options.dat"
+    Const VOCLIST_FILE As String = "voclist.dat"
+
+    Sub SaveSettings()
+        Dim isToolbarOn As Boolean = ToolbarCheckBox.Checked, isStatusBarOn As Boolean = StatusBarCheckBox.Checked
+        Try
+            MainForm.ToolStrip.Visible = ToolbarCheckBox.Checked
+            MainForm.StatusStrip.Visible = StatusBarCheckBox.Checked
+            FileOpen(1, OPTIONS_FILE, OpenMode.Output)
+            PrintLine(1, StartupOpenTextBox.Text)
+            PrintLine(1, isToolbarOn)
+            PrintLine(1, isStatusBarOn)
+            FileClose(1)
+            FileOpen(1, VOCLIST_FILE, OpenMode.Output)
+            For i = 0 To VocListBox.Items.Count - 1
+                PrintLine(1, VocListBox.Items(i))
+            Next
+            FileClose(1)
+        Catch ex As Exception
+            MsgBox("Mentési hiba." + vbNewLine + ex.Message, vbCritical)
+        End Try
     End Sub
+
+    Private Sub LoadSettings()
+        Dim isToolbarOn As Boolean = False, isStatusBarOn As Boolean = False
+        Try
+            FileOpen(1, OPTIONS_FILE, OpenMode.Input)
+            Input(1, StartupOpenTextBox.Text)
+            Input(1, isToolbarOn)
+            Input(1, isStatusBarOn)
+            FileClose(1)
+            If isToolbarOn = True Then ToolbarCheckBox.Checked = True Else ToolbarCheckBox.Checked = False
+            If isStatusBarOn = True Then StatusBarCheckBox.Checked = True Else StatusBarCheckBox.Checked = False
+            ListBox1_SelectedIndexChanged()
+            Exit Sub
+        Catch ex As Exception
+            MsgBox("Nem sikerült betölteni a beállításokat." + vbNewLine + ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
     Private Sub OK_Button_Click() Handles OK_Button.Click
         SaveSettings()
-
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
@@ -35,87 +53,38 @@ Public Class SettingsDialog
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim ke
-        OpenFileDialog1.FileName = TextBox1.Text
-        ke = OpenFileDialog1.ShowDialog()
-        If ke = vbOK Then TextBox1.Text = OpenFileDialog1.FileName
+    Private Sub ListBox1_SelectedIndexChanged() Handles VocListBox.SelectedIndexChanged
+        If VocListBox.SelectedIndex < 0 Then ModifyButton.Enabled = False Else ModifyButton.Enabled = True
+        If VocListBox.SelectedIndex < 0 Then DeleteButton.Enabled = False Else DeleteButton.Enabled = True
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim ol
-        ol = FontDialog1.ShowDialog()
-        If ol = vbOK Then
-
-            '1:          TextBox2.Text = FontDialog1.Font.Name
-            '           NumericUpDown1.Value = FontDialog1.Font.Size
-            '          CheckBox3.Checked = FontDialog1.Font.Bold
-            '         CheckBox4.Checked = FontDialog1.Font.Italic
+    Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
+        Dim modifyEntryDlg = New ModifyEntryDialog()
+        modifyEntryDlg.EntryTextBox.Text = VocListBox.Items(VocListBox.SelectedIndex)
+        If modifyEntryDlg.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            VocListBox.Items(VocListBox.SelectedIndex) = modifyEntryDlg.EntryTextBox.Text
         End If
-
     End Sub
 
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-        Dim oda
-        '       OpenFileDialog1.FileName = ListBox1.Items(ListBox1.SelectedIndex)
-        oda = OpenFileDialog1.ShowDialog()
-
-        If oda = vbOK Then ListBox1.Items.Add(OpenFileDialog1.FileName)
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+        VocListBox.Items.RemoveAt(VocListBox.SelectedIndex)
     End Sub
 
-    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
-        '        OpenFileDialog1.FileName = ListBox1.Items(ListBox1.SelectedIndex)
-
-        ModifyEntryDialogForm.ind.Text = ListBox1.SelectedIndex
-        ModifyEntryDialogForm.TextBox1.Text = ListBox1.Items(ListBox1.SelectedIndex)
-        ModifyEntryDialogForm.ShowDialog()
+    Private Sub NewItemButton_Click(sender As Object, e As EventArgs) Handles NewItemButton.Click
+        If StartupOpenFileDialog.ShowDialog() = vbOK Then VocListBox.Items.Add(StartupOpenFileDialog.FileName)
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim ol
-        ol = ColorDialog1.ShowDialog()
-        ' If ol = vbOK Then PictureBox1.BackColor = ColorDialog1.Color
-
+    Private Sub BrowseButton_Click(sender As Object, e As EventArgs) Handles BrowseButton.Click
+        StartupOpenFileDialog.FileName = StartupOpenTextBox.Text
+        If StartupOpenFileDialog.ShowDialog() = vbOK Then StartupOpenTextBox.Text = StartupOpenFileDialog.FileName
     End Sub
 
-  
-
-    Private Sub ListBox1_SelectedIndexChanged() Handles ListBox1.SelectedIndexChanged
-
-        If ListBox1.SelectedIndex < 0 Then Button6.Enabled = False Else Button6.Enabled = True
-        If ListBox1.SelectedIndex < 0 Then Button7.Enabled = False Else Button7.Enabled = True
-
+    Private Sub AddToVocabListButton_Click(sender As Object, e As EventArgs) Handles AddToVocabListButton.Click
+        VocListBox.Items.Add(StartupOpenTextBox.Text)
+        VocListBox.Focus()
     End Sub
 
-    Private Sub Dialog1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        On Error GoTo 67
-        Dim bej1, bej2
-        FileOpen(36, "options.dat", OpenMode.Input)
-        Input(36, TextBox1.Text)
-        Input(36, bej1)
-        Input(36, bej2)
-        FileClose(36)
-        If bej1 = True Then CheckBox1.Checked = True Else CheckBox1.Checked = False
-        If bej2 = True Then CheckBox2.Checked = True Else CheckBox2.Checked = False
-
-        ListBox1_SelectedIndexChanged()
-        Exit Sub
-67:     MsgBox("Nem sikerült betölteni a beállításokat.", MsgBoxStyle.Critical)
-
-    End Sub
-
-    Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
-        ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
-
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        ListBox1.Items.Add(TextBox1.Text)
-        ListBox1.Focus()
-
-    End Sub
-
-    Private Sub ListBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListBox1.SelectedIndexChanged
-       
+    Private Sub SettingsDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadSettings()
     End Sub
 End Class

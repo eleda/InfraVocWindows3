@@ -26,7 +26,6 @@ Public Class SearchDialog
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Close this form
         Me.Close()
     End Sub
 
@@ -75,10 +74,6 @@ Public Class SearchDialog
 
     Private Sub TileToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TileToolStripMenuItem.Click
         SetView(View.Tile)
-    End Sub
-
-    Private Sub List1_DoubleClick() Handles ResultListView.DoubleClick
-        GoButton_Click()
     End Sub
 
     Private Sub ResultListView_SelectedIndexChanged() Handles ResultListView.SelectedIndexChanged
@@ -145,15 +140,15 @@ Public Class SearchDialog
         End If
     End Sub
 
-    Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchToolStripButton.Click
+    Private Sub SearchToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchToolStripButton.Click
         SearchButton_Click()
     End Sub
 
-    Private Sub command2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles command2.Click
+    Private Sub command2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelButton.Click
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GoButton.Click
         GoButton_Click()
     End Sub
 
@@ -162,5 +157,9 @@ Public Class SearchDialog
         ResultListView.Clear()
         FindText.Clear()
         SearchTitleLabel.Focus()
+    End Sub
+
+    Private Sub ResultListView_DoubleClick(sender As Object, e As EventArgs) Handles ResultListView.DoubleClick
+        GoButton_Click()
     End Sub
 End Class

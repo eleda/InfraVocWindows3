@@ -7,10 +7,6 @@
         NewEntryDialog.ShowDialog()
     End Sub
 
-    Private Sub List1_Click() Handles WordsListBox.Click
-        Form1_Activated()
-    End Sub
-
     Private Sub DeleteSelectedWord()
         If WordsListBox.SelectedIndex = -1 Then
             MsgBox("Nem jelölt ki elemet.", vbExclamation)
@@ -27,7 +23,7 @@
         End If
     End Sub
 
-    Private Sub Form1_Activated()
+    Private Sub MainForm_Activated()
         If WordsListBox.SelectedIndex = -1 Then
             EditWordToolStripButton.Enabled = False
             DeleteWordToolStripButton.Enabled = False
@@ -105,21 +101,21 @@
             Input(10, isToolBarOn)
             Input(10, isStatusBarOn)
             currentFileName = StarUpFile
-            SettingsDialog.TextBox1.Text = StarUpFile
+            SettingsDialog.StartupOpenTextBox.Text = StarUpFile
             If isToolBarOn Then ToolStrip.Visible = True Else ToolStrip.Visible = False
-            If isToolBarOn Then SettingsDialog.CheckBox1.Checked = True Else ToolStrip.Visible = False
+            If isToolBarOn Then SettingsDialog.ToolbarCheckBox.Checked = True Else ToolStrip.Visible = False
             If isStatusBarOn = True Then StatusStrip.Visible = True Else StatusStrip.Visible = False
-            If isStatusBarOn = True Then SettingsDialog.CheckBox2.Checked = True Else SettingsDialog.CheckBox2.Checked = False
+            If isStatusBarOn = True Then SettingsDialog.StatusBarCheckBox.Checked = True Else SettingsDialog.StatusBarCheckBox.Checked = False
             FileClose(10)
 
             ' Load Voclist File
             FileOpen(10, "voclist.dat", OpenMode.Input)
             Do Until EOF(10)
                 Input(10, oneFile)
-                SettingsDialog.ListBox1.Items.Clear()
+                SettingsDialog.VocListBox.Items.Clear()
                 ChooseVocabDialog.VocabListBox.Items.Clear()
                 ChooseVocabDialog.VocabListBox.Items.Add(oneFile)
-                SettingsDialog.ListBox1.Items.Add(oneFile)
+                SettingsDialog.VocListBox.Items.Add(oneFile)
             Loop
 
         Catch ex As Exception
@@ -167,7 +163,7 @@
     End Sub
 
     Private Sub List1_SelectedIndexChanged_1() Handles WordsListBox.SelectedIndexChanged
-        Form1_Activated()
+        MainForm_Activated()
         Try
             If WordsListBox.SelectedItems.Count > 0 Then
                 InfoToolStripStatusLabel.Text = WordsListBox.Items(WordsListBox.SelectedIndex)
@@ -213,11 +209,11 @@
                 megnyitas()
                 If setBaseVocab Then
                     ChooseVocabDialog.VocabListBox.Items.Add(newVocabFileName)
-                    SettingsDialog.ListBox1.Items.Add(newVocabFileName)
+                    SettingsDialog.VocListBox.Items.Add(newVocabFileName)
                     SaveWordList()
                 End If
                 If addToVocabList Then
-                    SettingsDialog.TextBox1.Text = newVocabFileName
+                    SettingsDialog.StartupOpenTextBox.Text = newVocabFileName
                     SettingsDialog.SaveSettings()
                 End If
             Catch ex As Exception
@@ -370,7 +366,7 @@
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = My.Application.Info.Title.ToString
-        List1_Click()
+        WordsListBox_Click(sender, e)
         LoadSettings()
         RefreshVocabulary()
     End Sub
@@ -381,5 +377,13 @@
 
     Private Sub ÚjSzótárToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewVocabToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub List1_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles WordsListBox.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub WordsListBox_Click(sender As Object, e As EventArgs) Handles WordsListBox.Click
+        MainForm_Activated()
     End Sub
 End Class

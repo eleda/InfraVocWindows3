@@ -43,14 +43,14 @@ Partial Class SearchDialog
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.SplitContainer = New System.Windows.Forms.SplitContainer()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.SearchEverywhereCheckBox = New System.Windows.Forms.CheckBox()
         Me.FindText = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SearchForLabel = New System.Windows.Forms.Label()
         Me.SearchTitleLabel = New System.Windows.Forms.Label()
         Me.SearchButton = New System.Windows.Forms.Button()
-        Me.command2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CancelButton = New System.Windows.Forms.Button()
+        Me.GoButton = New System.Windows.Forms.Button()
         Me.ResultListView = New System.Windows.Forms.ListView()
         Me.ListViewSmallImageList = New System.Windows.Forms.ImageList(Me.components)
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
@@ -72,7 +72,7 @@ Partial Class SearchDialog
         Me.SplitContainer.Panel1.SuspendLayout()
         Me.SplitContainer.Panel2.SuspendLayout()
         Me.SplitContainer.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -136,7 +136,7 @@ Partial Class SearchDialog
         '
         Me.SplitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.SplitContainer.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.SplitContainer.Panel1.Controls.Add(Me.TableLayoutPanel1)
+        Me.SplitContainer.Panel1.Controls.Add(Me.TableLayoutPanel)
         '
         'SplitContainer.Panel2
         '
@@ -147,33 +147,33 @@ Partial Class SearchDialog
         Me.SplitContainer.TabStop = False
         Me.SplitContainer.Text = "SplitContainer1"
         '
-        'TableLayoutPanel1
+        'TableLayoutPanel
         '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.SearchEverywhereCheckBox, 0, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.FindText, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.SearchTitleLabel, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.SearchButton, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.command2, 0, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 0, 5)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 7
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(215, 444)
-        Me.TableLayoutPanel1.TabIndex = 5
+        Me.TableLayoutPanel.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TableLayoutPanel.ColumnCount = 1
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel.Controls.Add(Me.SearchEverywhereCheckBox, 0, 3)
+        Me.TableLayoutPanel.Controls.Add(Me.FindText, 0, 2)
+        Me.TableLayoutPanel.Controls.Add(Me.SearchForLabel, 0, 1)
+        Me.TableLayoutPanel.Controls.Add(Me.SearchTitleLabel, 0, 0)
+        Me.TableLayoutPanel.Controls.Add(Me.SearchButton, 0, 4)
+        Me.TableLayoutPanel.Controls.Add(Me.CancelButton, 0, 6)
+        Me.TableLayoutPanel.Controls.Add(Me.GoButton, 0, 5)
+        Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.TableLayoutPanel.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel.Name = "TableLayoutPanel"
+        Me.TableLayoutPanel.RowCount = 7
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(215, 444)
+        Me.TableLayoutPanel.TabIndex = 5
         '
         'SearchEverywhereCheckBox
         '
@@ -201,20 +201,20 @@ Partial Class SearchDialog
         Me.FindText.Size = New System.Drawing.Size(197, 22)
         Me.FindText.TabIndex = 2
         '
-        'Label1
+        'SearchForLabel
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Location = New System.Drawing.Point(9, 57)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(9, 9, 9, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(102, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Keresendő &szöveg:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.SearchForLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.SearchForLabel.AutoSize = True
+        Me.SearchForLabel.BackColor = System.Drawing.Color.Transparent
+        Me.SearchForLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SearchForLabel.Location = New System.Drawing.Point(9, 57)
+        Me.SearchForLabel.Margin = New System.Windows.Forms.Padding(9, 9, 9, 0)
+        Me.SearchForLabel.Name = "SearchForLabel"
+        Me.SearchForLabel.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.SearchForLabel.Size = New System.Drawing.Size(102, 13)
+        Me.SearchForLabel.TabIndex = 1
+        Me.SearchForLabel.Text = "Keresendő &szöveg:"
+        Me.SearchForLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'SearchTitleLabel
         '
@@ -244,38 +244,38 @@ Partial Class SearchDialog
         Me.SearchButton.Text = "&Keresés"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
-        'command2
+        'CancelButton
         '
-        Me.command2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.CancelButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.command2.BackColor = System.Drawing.SystemColors.Control
-        Me.command2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.command2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.command2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.command2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.command2.Location = New System.Drawing.Point(113, 414)
-        Me.command2.Margin = New System.Windows.Forms.Padding(5)
-        Me.command2.Name = "command2"
-        Me.command2.Size = New System.Drawing.Size(97, 25)
-        Me.command2.TabIndex = 6
-        Me.command2.Text = "Mé&gse"
-        Me.command2.UseVisualStyleBackColor = False
+        Me.CancelButton.BackColor = System.Drawing.SystemColors.Control
+        Me.CancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CancelButton.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.CancelButton.Location = New System.Drawing.Point(113, 414)
+        Me.CancelButton.Margin = New System.Windows.Forms.Padding(5)
+        Me.CancelButton.Name = "CancelButton"
+        Me.CancelButton.Size = New System.Drawing.Size(97, 25)
+        Me.CancelButton.TabIndex = 6
+        Me.CancelButton.Text = "Mé&gse"
+        Me.CancelButton.UseVisualStyleBackColor = False
         '
-        'Button1
+        'GoButton
         '
-        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.GoButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.SystemColors.Control
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button1.Location = New System.Drawing.Point(113, 379)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(97, 25)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "&Ugrás"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.GoButton.BackColor = System.Drawing.SystemColors.Control
+        Me.GoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GoButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.GoButton.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.GoButton.Location = New System.Drawing.Point(113, 379)
+        Me.GoButton.Margin = New System.Windows.Forms.Padding(5)
+        Me.GoButton.Name = "GoButton"
+        Me.GoButton.Size = New System.Drawing.Size(97, 25)
+        Me.GoButton.TabIndex = 5
+        Me.GoButton.Text = "&Ugrás"
+        Me.GoButton.UseVisualStyleBackColor = False
         '
         'ResultListView
         '
@@ -383,7 +383,7 @@ Partial Class SearchDialog
         Me.AcceptButton = Me.SearchButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.command2
+        Me.CancelButton = Me.CancelButton
         Me.ClientSize = New System.Drawing.Size(600, 494)
         Me.Controls.Add(Me.ToolStripContainer)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -404,8 +404,8 @@ Partial Class SearchDialog
         Me.SplitContainer.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.TableLayoutPanel.ResumeLayout(False)
+        Me.TableLayoutPanel.PerformLayout()
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
         Me.ResumeLayout(False)
@@ -413,15 +413,15 @@ Partial Class SearchDialog
     End Sub
     Friend WithEvents SearchEverywhereCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents FindText As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents SearchForLabel As System.Windows.Forms.Label
     Friend WithEvents SearchButton As System.Windows.Forms.Button
-    Friend WithEvents command2 As System.Windows.Forms.Button
+    Friend WithEvents CancelButton As System.Windows.Forms.Button
     Friend WithEvents SearchToolStripButton As System.Windows.Forms.ToolStripButton
-    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents GoToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents EditToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents SearchTitleLabel As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents GoButton As System.Windows.Forms.Button
 
 End Class

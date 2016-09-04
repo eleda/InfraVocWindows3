@@ -16,7 +16,7 @@ Partial Class SplashForm
     Friend WithEvents ApplicationTitle As System.Windows.Forms.Label
     Friend WithEvents Version As System.Windows.Forms.Label
     Friend WithEvents Copyright As System.Windows.Forms.Label
-    Friend WithEvents Infrvocabularyelindult As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents DetailsLayoutPanel As System.Windows.Forms.TableLayoutPanel
 
     'Required by the Windows Form Designer
@@ -27,38 +27,37 @@ Partial Class SplashForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashForm))
-        Me.Infrvocabularyelindult = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.DetailsLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Version = New System.Windows.Forms.Label()
         Me.Copyright = New System.Windows.Forms.Label()
         Me.ApplicationTitle = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Infrvocabularyelindult.SuspendLayout()
+        Me.BackgroundWorker = New System.ComponentModel.BackgroundWorker()
+        Me.PictureBox = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel.SuspendLayout()
         Me.DetailsLayoutPanel.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Infrvocabularyelindult
+        'TableLayoutPanel
         '
-        Me.Infrvocabularyelindult.BackColor = System.Drawing.Color.Transparent
-        Me.Infrvocabularyelindult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Infrvocabularyelindult.ColumnCount = 2
-        Me.Infrvocabularyelindult.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243.0!))
-        Me.Infrvocabularyelindult.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253.0!))
-        Me.Infrvocabularyelindult.Controls.Add(Me.DetailsLayoutPanel, 1, 1)
-        Me.Infrvocabularyelindult.Controls.Add(Me.ApplicationTitle, 1, 0)
-        Me.Infrvocabularyelindult.Controls.Add(Me.PictureBox1, 0, 0)
-        Me.Infrvocabularyelindult.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Infrvocabularyelindult.Location = New System.Drawing.Point(0, 0)
-        Me.Infrvocabularyelindult.Name = "Infrvocabularyelindult"
-        Me.Infrvocabularyelindult.RowCount = 2
-        Me.Infrvocabularyelindult.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218.0!))
-        Me.Infrvocabularyelindult.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38.0!))
-        Me.Infrvocabularyelindult.Size = New System.Drawing.Size(496, 303)
-        Me.Infrvocabularyelindult.TabIndex = 0
-        Me.Infrvocabularyelindult.UseWaitCursor = True
+        Me.TableLayoutPanel.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TableLayoutPanel.ColumnCount = 2
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253.0!))
+        Me.TableLayoutPanel.Controls.Add(Me.DetailsLayoutPanel, 1, 1)
+        Me.TableLayoutPanel.Controls.Add(Me.ApplicationTitle, 1, 0)
+        Me.TableLayoutPanel.Controls.Add(Me.PictureBox, 0, 0)
+        Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel.Name = "TableLayoutPanel"
+        Me.TableLayoutPanel.RowCount = 2
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38.0!))
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(496, 303)
+        Me.TableLayoutPanel.TabIndex = 0
+        Me.TableLayoutPanel.UseWaitCursor = True
         '
         'DetailsLayoutPanel
         '
@@ -86,7 +85,7 @@ Partial Class SplashForm
         Me.Version.Name = "Version"
         Me.Version.Size = New System.Drawing.Size(241, 20)
         Me.Version.TabIndex = 1
-        Me.Version.Text = "Verzió 3.6"
+        Me.Version.Text = "<Version>"
         Me.Version.UseWaitCursor = True
         '
         'Copyright
@@ -98,43 +97,44 @@ Partial Class SplashForm
         Me.Copyright.Name = "Copyright"
         Me.Copyright.Size = New System.Drawing.Size(241, 40)
         Me.Copyright.TabIndex = 2
-        Me.Copyright.Text = "(C) 2006-2016. Elekes Dávid"
+        Me.Copyright.Text = "<Copyright>"
         Me.Copyright.UseWaitCursor = True
         '
         'ApplicationTitle
         '
         Me.ApplicationTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
-        Me.ApplicationTitle.Font = New System.Drawing.Font("Modern No. 20", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationTitle.Font = New System.Drawing.Font("Lucida Fax", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ApplicationTitle.Location = New System.Drawing.Point(246, 3)
         Me.ApplicationTitle.Name = "ApplicationTitle"
         Me.ApplicationTitle.Size = New System.Drawing.Size(247, 212)
         Me.ApplicationTitle.TabIndex = 0
-        Me.ApplicationTitle.Text = "Infra Vocabulary"
+        Me.ApplicationTitle.Text = "<Title>"
         Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.ApplicationTitle.UseWaitCursor = True
         '
-        'PictureBox1
+        'PictureBox
         '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(24, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(194, 193)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.UseWaitCursor = True
+        Me.PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox.BackgroundImage = Global.InfraVocabularyWindows.My.Resources.Resources.InfraVocIcon3
+        Me.PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox.InitialImage = Global.InfraVocabularyWindows.My.Resources.Resources.InfraVocIcon3
+        Me.PictureBox.Location = New System.Drawing.Point(24, 12)
+        Me.PictureBox.Name = "PictureBox"
+        Me.PictureBox.Size = New System.Drawing.Size(194, 193)
+        Me.PictureBox.TabIndex = 2
+        Me.PictureBox.TabStop = False
+        Me.PictureBox.UseWaitCursor = True
         '
         'SplashForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DarkKhaki
+        Me.BackColor = System.Drawing.Color.Orange
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(496, 303)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Infrvocabularyelindult)
+        Me.Controls.Add(Me.TableLayoutPanel)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -143,13 +143,13 @@ Partial Class SplashForm
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.UseWaitCursor = True
-        Me.Infrvocabularyelindult.ResumeLayout(False)
+        Me.TableLayoutPanel.ResumeLayout(False)
         Me.DetailsLayoutPanel.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents BackgroundWorker As System.ComponentModel.BackgroundWorker
 
 End Class

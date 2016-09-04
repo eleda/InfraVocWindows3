@@ -26,8 +26,8 @@ Partial Class AboutDialog
         Me.TitleLbl = New System.Windows.Forms.Label()
         Me.VerLbl = New System.Windows.Forms.Label()
         Me.YearLbl = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.OK_Button = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,18 +61,6 @@ Partial Class AboutDialog
         Me.YearLbl.TabIndex = 2
         Me.YearLbl.Text = "<copyright>"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 20)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 7, 3, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(56, 58)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
-        '
         'OK_Button
         '
         Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -87,6 +75,18 @@ Partial Class AboutDialog
         Me.OK_Button.TabIndex = 4
         Me.OK_Button.Text = "OK"
         Me.OK_Button.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Image = Global.InfraVocabularyWindows.My.Resources.Resources.InfraVocIcon3
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 20)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 7, 3, 7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(62, 57)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'AboutDialog
         '
