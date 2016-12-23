@@ -86,7 +86,7 @@ Partial Class SearchDialog
         'ToolStripContainer.ContentPanel
         '
         Me.ToolStripContainer.ContentPanel.Controls.Add(Me.SplitContainer)
-        Me.ToolStripContainer.ContentPanel.Size = New System.Drawing.Size(600, 444)
+        Me.ToolStripContainer.ContentPanel.Size = New System.Drawing.Size(600, 438)
         Me.ToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStripContainer.Location = New System.Drawing.Point(0, 0)
         Me.ToolStripContainer.Name = "ToolStripContainer"
@@ -100,6 +100,7 @@ Partial Class SearchDialog
         Me.ToolStripContainer.TopToolStripPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStripContainer.TopToolStripPanel.Controls.Add(Me.ToolStrip)
         Me.ToolStripContainer.TopToolStripPanel.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.ToolStripContainer.TopToolStripPanel.MinimumSize = New System.Drawing.Size(0, 30)
         '
         'StatusStrip
         '
@@ -141,7 +142,7 @@ Partial Class SearchDialog
         'SplitContainer.Panel2
         '
         Me.SplitContainer.Panel2.Controls.Add(Me.ResultListView)
-        Me.SplitContainer.Size = New System.Drawing.Size(600, 444)
+        Me.SplitContainer.Size = New System.Drawing.Size(600, 438)
         Me.SplitContainer.SplitterDistance = 215
         Me.SplitContainer.TabIndex = 0
         Me.SplitContainer.TabStop = False
@@ -172,7 +173,7 @@ Partial Class SearchDialog
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(215, 444)
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(215, 438)
         Me.TableLayoutPanel.TabIndex = 5
         '
         'SearchEverywhereCheckBox
@@ -183,7 +184,7 @@ Partial Class SearchDialog
         Me.SearchEverywhereCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
         Me.SearchEverywhereCheckBox.Cursor = System.Windows.Forms.Cursors.Default
         Me.SearchEverywhereCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SearchEverywhereCheckBox.Location = New System.Drawing.Point(9, 313)
+        Me.SearchEverywhereCheckBox.Location = New System.Drawing.Point(9, 307)
         Me.SearchEverywhereCheckBox.Margin = New System.Windows.Forms.Padding(9)
         Me.SearchEverywhereCheckBox.Name = "SearchEverywhereCheckBox"
         Me.SearchEverywhereCheckBox.Size = New System.Drawing.Size(119, 17)
@@ -236,7 +237,7 @@ Partial Class SearchDialog
         Me.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SearchButton.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.SearchButton.Location = New System.Drawing.Point(113, 344)
+        Me.SearchButton.Location = New System.Drawing.Point(113, 338)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(5)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(97, 25)
@@ -253,7 +254,7 @@ Partial Class SearchDialog
         Me.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CancelButton.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.CancelButton.Location = New System.Drawing.Point(113, 414)
+        Me.CancelButton.Location = New System.Drawing.Point(113, 408)
         Me.CancelButton.Margin = New System.Windows.Forms.Padding(5)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(97, 25)
@@ -269,7 +270,7 @@ Partial Class SearchDialog
         Me.GoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GoButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GoButton.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.GoButton.Location = New System.Drawing.Point(113, 379)
+        Me.GoButton.Location = New System.Drawing.Point(113, 373)
         Me.GoButton.Margin = New System.Windows.Forms.Padding(5)
         Me.GoButton.Name = "GoButton"
         Me.GoButton.Size = New System.Drawing.Size(97, 25)
@@ -285,7 +286,7 @@ Partial Class SearchDialog
         Me.ResultListView.LargeImageList = Me.ListViewSmallImageList
         Me.ResultListView.Location = New System.Drawing.Point(0, 0)
         Me.ResultListView.Name = "ResultListView"
-        Me.ResultListView.Size = New System.Drawing.Size(381, 444)
+        Me.ResultListView.Size = New System.Drawing.Size(381, 438)
         Me.ResultListView.SmallImageList = Me.ListViewSmallImageList
         Me.ResultListView.StateImageList = Me.ListViewSmallImageList
         Me.ResultListView.TabIndex = 7
@@ -299,7 +300,7 @@ Partial Class SearchDialog
         Me.ListViewSmallImageList.Images.SetKeyName(0, "Graph1")
         Me.ListViewSmallImageList.Images.SetKeyName(1, "Graph2")
         Me.ListViewSmallImageList.Images.SetKeyName(2, "Graph3")
-        Me.ListViewSmallImageList.Images.SetKeyName(3, "equal.ico")
+        Me.ListViewSmallImageList.Images.SetKeyName(3, "file.png")
         '
         'ToolStrip
         '
@@ -308,11 +309,13 @@ Partial Class SearchDialog
         Me.ToolStrip.BackColor = System.Drawing.SystemColors.Control
         Me.ToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip.Dock = System.Windows.Forms.DockStyle.None
-        Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripButton, Me.ListViewToolStripButton, Me.ToolStripSeparator1, Me.GoToolStripButton, Me.EditToolStripButton})
         Me.ToolStrip.Location = New System.Drawing.Point(3, 0)
         Me.ToolStrip.Name = "ToolStrip"
-        Me.ToolStrip.Size = New System.Drawing.Size(352, 28)
+        Me.ToolStrip.Padding = New System.Windows.Forms.Padding(5)
+        Me.ToolStrip.Size = New System.Drawing.Size(303, 34)
         Me.ToolStrip.TabIndex = 0
         Me.ToolStrip.Text = "ToolStrip1"
         '

@@ -41,8 +41,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>hu-HU</TargetCulture>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>3.5.930.%2a</ApplicationVersion>
+    <ApplicationRevision>1219</ApplicationRevision>
+    <ApplicationVersion>3.6.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>false</BootstrapperEnabled>
@@ -92,10 +92,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="BackgroundDialog.Designer.vb">
+      <DependentUpon>BackgroundDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BackgroundDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackgroundImages.vb" />
     <Compile Include="ChooseVocabDialog.Designer.vb">
       <DependentUpon>ChooseVocabDialog.vb</DependentUpon>
     </Compile>
     <Compile Include="ChooseVocabDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorDialog.Designer.vb">
+      <DependentUpon>EditorDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditorDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.Designer.vb">
+      <DependentUpon>LoadingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchDialog.Designer.vb">
@@ -171,8 +190,17 @@
     <Compile Include="VocabularyHelper.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BackgroundDialog.resx">
+      <DependentUpon>BackgroundDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChooseVocabDialog.resx">
       <DependentUpon>ChooseVocabDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorDialog.resx">
+      <DependentUpon>EditorDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingForm.resx">
+      <DependentUpon>LoadingForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchDialog.resx">
       <DependentUpon>SearchDialog.vb</DependentUpon>
@@ -308,6 +336,31 @@
   <ItemGroup>
     <Content Include="InfraVocIcon.ico" />
     <Content Include="infravocicon3_iFz_icon.ico" />
+    <None Include="Resources\Kattanás.wav" />
+    <None Include="Resources\Mágnestekercs.wav" />
+    <None Include="Resources\katt.wav" />
+    <None Include="Resources\type.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\open-archive.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\infrravoc_splash1.png" />
+    <None Include="Resources\infrravoc_splash.png" />
+    <None Include="Resources\pink-note-1507506-640x480.jpg" />
+    <None Include="Resources\back_dog.jpg" />
+    <None Include="Resources\3-and-2-1380769-639x408.jpg" />
+    <None Include="Resources\add.png" />
+    <Content Include="Resources\ajax-loader.gif" />
+    <None Include="Resources\ajax-loader1.gif" />
+    <None Include="Resources\cancel.png" />
+    <Content Include="Resources\dog.jpg" />
+    <None Include="Resources\eraser.png" />
+    <Content Include="Resources\hot-chocolate-1906515_640.jpg" />
+    <None Include="Resources\danger.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\font.png" />
+    <None Include="Resources\color-palette.png" />
     <None Include="Resources\InfraVocIcon3.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\exit1.png" />
@@ -330,6 +383,9 @@
     <None Include="Resources\iconviewmini_1.png" />
     <None Include="Resources\findmini_1.png" />
     <None Include="Resources\ex_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\backimg\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

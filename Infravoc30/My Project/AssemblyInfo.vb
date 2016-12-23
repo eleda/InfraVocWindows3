@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Infra Vocabulary for Windows Beta")>
+<Assembly: AssemblyTitle("Infra Vocabulary")>
 <Assembly: AssemblyDescription("Szótárprogram")>
 <Assembly: AssemblyCompany("Infra")>
 <Assembly: AssemblyProduct("InfraVocabularyWindows")>
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.5.9400.0")>
-<Assembly: AssemblyFileVersion("3.5.9400.0")>
+<Assembly: AssemblyVersion("3.6.0.1219")>
+<Assembly: AssemblyFileVersion("3.6.0.1219")>
 
 <Assembly: NeutralResourcesLanguageAttribute("hu-HU")> 

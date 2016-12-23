@@ -162,4 +162,10 @@ Public Class SearchDialog
     Private Sub ResultListView_DoubleClick(sender As Object, e As EventArgs) Handles ResultListView.DoubleClick
         GoButton_Click()
     End Sub
+
+    Private Sub SearchDialog_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
 End Class
