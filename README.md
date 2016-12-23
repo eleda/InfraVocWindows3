@@ -1,4 +1,4 @@
-# Infra Vocabulary for Windows 3
+# Infra Vocabulary for Windows 3 beta
 
 Verziószám: 3.6.0
 
