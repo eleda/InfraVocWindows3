@@ -2,19 +2,15 @@
 
 
 Public Class SettingsDialog
-    Const OPTIONS_FILE As String = "options.dat"
+    'Const OPTIONS_FILE As String = "options.dat"
     Const VOCLIST_FILE As String = "voclist.dat"
 
     Sub SaveSettings()
-        Dim isToolbarOn As Boolean = ToolbarCheckBox.Checked, isStatusBarOn As Boolean = StatusBarCheckBox.Checked
+        ' My.Settings.IsToolbarOn = ToolbarCheckBox.Checked
+        ' My.Settings.IsStatusbarOn = StatusBarCheckBox.Checked
+        My.Settings.StartupFile = StartupOpenTextBox.Text
+
         Try
-            MainForm.ToolStrip.Visible = ToolbarCheckBox.Checked
-            MainForm.StatusStrip.Visible = StatusBarCheckBox.Checked
-            FileOpen(1, OPTIONS_FILE, OpenMode.Output)
-            PrintLine(1, StartupOpenTextBox.Text)
-            PrintLine(1, isToolbarOn)
-            PrintLine(1, isStatusBarOn)
-            FileClose(1)
             FileOpen(1, VOCLIST_FILE, OpenMode.Output)
             For i = 0 To VocListBox.Items.Count - 1
                 PrintLine(1, VocListBox.Items(i))
@@ -23,20 +19,20 @@ Public Class SettingsDialog
         Catch ex As Exception
             MsgBox("Mentési hiba." + vbNewLine + ex.Message, vbCritical)
         End Try
+
     End Sub
 
     Private Sub LoadSettings()
-        Dim isToolbarOn As Boolean = False, isStatusBarOn As Boolean = False
         Try
-            FileOpen(1, OPTIONS_FILE, OpenMode.Input)
-            Input(1, StartupOpenTextBox.Text)
-            Input(1, isToolbarOn)
-            Input(1, isStatusBarOn)
-            FileClose(1)
-            If isToolbarOn = True Then ToolbarCheckBox.Checked = True Else ToolbarCheckBox.Checked = False
-            If isStatusBarOn = True Then StatusBarCheckBox.Checked = True Else StatusBarCheckBox.Checked = False
+            ' alap - elso lap
+            ' ToolbarCheckBox.Checked = My.Settings.IsToolbarOn
+            ' StatusBarCheckBox.Checked = My.Settings.IsStatusbarOn
+            StartupOpenTextBox.Text = My.Settings.StartupFile
+
             ListBox1_SelectedIndexChanged()
             Exit Sub
+            ' szotarlista - masodik lap
+            '
         Catch ex As Exception
             MsgBox("Nem sikerült betölteni a beállításokat." + vbNewLine + ex.Message, MsgBoxStyle.Critical)
         End Try

@@ -10,16 +10,16 @@
 
     Private Sub SplashScreen1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            ApplicationTitle.Text = My.Application.Info.Title.ToString
+            'ApplicationTitle.Text = My.Application.Info.Title.ToString
             Version.Text = My.Application.Info.Version.ToString
-            Copyright.Text = My.Application.Info.Copyright.ToString
+            'Copyright.Text = My.Application.Info.Copyright.ToString
 
             VocabularyHelper.ControlSettings()
 
+
             MainForm.Activate()
             MainForm.Focus()
-            MainForm.Focus()
-            MainForm.Focus()
+
 
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
@@ -31,4 +31,10 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub BackgroundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker.DoWork
+
+    End Sub
+
+
 End Class

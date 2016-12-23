@@ -53,6 +53,126 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Teal")>  _
+        Public Property FontColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("FontColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("FontColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("192, 255, 255")>  _
+        Public Property BackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("BackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("BackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property IsToolbarOn() As Boolean
+            Get
+                Return CType(Me("IsToolbarOn"),Boolean)
+            End Get
+            Set
+                Me("IsToolbarOn") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property IsStatusbarOn() As Boolean
+            Get
+                Return CType(Me("IsStatusbarOn"),Boolean)
+            End Get
+            Set
+                Me("IsStatusbarOn") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("default.voc")>  _
+        Public Property StartupFile() As String
+            Get
+                Return CType(Me("StartupFile"),String)
+            End Get
+            Set
+                Me("StartupFile") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Times New Roman, 14.25pt")>  _
+        Public Property Font() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("Font"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("Font") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property View() As Integer
+            Get
+                Return CType(Me("View"),Integer)
+            End Get
+            Set
+                Me("View") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ListViewSort() As Integer
+            Get
+                Return CType(Me("ListViewSort"),Integer)
+            End Get
+            Set
+                Me("ListViewSort") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Setting() As String
+            Get
+                Return CType(Me("Setting"),String)
+            End Get
+            Set
+                Me("Setting") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("exit1,dog,about,bk_bird")>  _
+        Public Property Backgrounds() As String
+            Get
+                Return CType(Me("Backgrounds"),String)
+            End Get
+            Set
+                Me("Backgrounds") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
