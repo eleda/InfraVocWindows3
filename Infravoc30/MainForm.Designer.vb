@@ -26,10 +26,16 @@ Partial Class MainForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewVocabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChooseVocabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenDirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.MinimizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NézetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClassicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,18 +45,29 @@ Partial Class MainForm
         Me.ToolbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ChooseFontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChooseColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SzóToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewWordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeparatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RenameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VocabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VocabSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DeleteAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BasicSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SoundOnLoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GithubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditContextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteContextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewItemContextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchContextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SzínToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.OkContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,35 +82,21 @@ Partial Class MainForm
         Me.ListView = New System.Windows.Forms.ListView()
         Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
         Me.WordsListBox = New System.Windows.Forms.ListBox()
-        Me.Label = New System.Windows.Forms.Label()
-        Me.ToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.FontDialog = New System.Windows.Forms.FontDialog()
-        Me.ColorDialog = New System.Windows.Forms.ColorDialog()
-        Me.LoadFileBackgroundWorker = New System.ComponentModel.BackgroundWorker()
-        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.SzínToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoveButton = New System.Windows.Forms.Button()
         Me.CloseSidePaneButton = New System.Windows.Forms.Button()
         Me.CorrectButton = New System.Windows.Forms.Button()
-        Me.SaveVocabToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.NewWordToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.Label = New System.Windows.Forms.Label()
+        Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.SearchToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.NewVocabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChooseVocabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenDirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MinimizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChooseFontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChooseColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewWordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RenameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BasicSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
+        Me.NewWordToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SaveVocabToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.FontDialog = New System.Windows.Forms.FontDialog()
+        Me.ColorDialog = New System.Windows.Forms.ColorDialog()
+        Me.LoadFileBackgroundWorker = New System.ComponentModel.BackgroundWorker()
+        Me.StatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip.SuspendLayout()
         Me.ContextMenuStrip.SuspendLayout()
         Me.OkContextMenuStrip.SuspendLayout()
@@ -124,15 +127,39 @@ Partial Class MainForm
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewVocabToolStripMenuItem, Me.ChooseVocabToolStripMenuItem, Me.ToolStripSeparator5, Me.SaveToolStripMenuItem, Me.RefreshToolStripMenuItem, Me.EditorToolStripMenuItem, Me.OpenDirToolStripMenuItem, Me.ToolStripSeparator6, Me.MinimizeToolStripMenuItem, Me.ExitToolItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewVocabToolStripMenuItem, Me.ChooseVocabToolStripMenuItem, Me.ToolStripSeparator5, Me.SaveToolStripMenuItem, Me.RefreshToolStripMenuItem, Me.EditorToolStripMenuItem, Me.OpenDirToolStripMenuItem, Me.ToolStripSeparator1, Me.StatToolStripMenuItem, Me.ToolStripSeparator6, Me.MinimizeToolStripMenuItem, Me.ExitToolItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(40, 21)
         Me.FileToolStripMenuItem.Text = "Fájl"
+        '
+        'NewVocabToolStripMenuItem
+        '
+        Me.NewVocabToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.newfile
+        Me.NewVocabToolStripMenuItem.Name = "NewVocabToolStripMenuItem"
+        Me.NewVocabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.NewVocabToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.NewVocabToolStripMenuItem.Text = "Új szótár..."
+        '
+        'ChooseVocabToolStripMenuItem
+        '
+        Me.ChooseVocabToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.openarchive
+        Me.ChooseVocabToolStripMenuItem.Name = "ChooseVocabToolStripMenuItem"
+        Me.ChooseVocabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.ChooseVocabToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.ChooseVocabToolStripMenuItem.Text = "Szótár kiválasztása..."
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(243, 6)
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.save
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.SaveToolStripMenuItem.Text = "Mentés"
         '
         'RefreshToolStripMenuItem
         '
@@ -147,10 +174,33 @@ Partial Class MainForm
         Me.EditorToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.EditorToolStripMenuItem.Text = "Szövegszerkeztő..."
         '
+        'OpenDirToolStripMenuItem
+        '
+        Me.OpenDirToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.folder
+        Me.OpenDirToolStripMenuItem.Name = "OpenDirToolStripMenuItem"
+        Me.OpenDirToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.OpenDirToolStripMenuItem.Text = "Könyvtár megnyitása"
+        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(243, 6)
+        '
+        'MinimizeToolStripMenuItem
+        '
+        Me.MinimizeToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.minimize
+        Me.MinimizeToolStripMenuItem.Name = "MinimizeToolStripMenuItem"
+        Me.MinimizeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11
+        Me.MinimizeToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.MinimizeToolStripMenuItem.Text = "Kisméret"
+        '
+        'ExitToolItem
+        '
+        Me.ExitToolItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources._exit
+        Me.ExitToolItem.Name = "ExitToolItem"
+        Me.ExitToolItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.ExitToolItem.Size = New System.Drawing.Size(246, 22)
+        Me.ExitToolItem.Text = "Kilépés"
         '
         'NézetToolStripMenuItem
         '
@@ -209,6 +259,20 @@ Partial Class MainForm
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(205, 6)
         '
+        'ChooseFontToolStripMenuItem
+        '
+        Me.ChooseFontToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.font
+        Me.ChooseFontToolStripMenuItem.Name = "ChooseFontToolStripMenuItem"
+        Me.ChooseFontToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ChooseFontToolStripMenuItem.Text = "Betűtípus választása..."
+        '
+        'ChooseColorToolStripMenuItem
+        '
+        Me.ChooseColorToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.colorpalette
+        Me.ChooseColorToolStripMenuItem.Name = "ChooseColorToolStripMenuItem"
+        Me.ChooseColorToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ChooseColorToolStripMenuItem.Text = "Szín választása..."
+        '
         'SzóToolStripMenuItem
         '
         Me.SzóToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewWordToolStripMenuItem, Me.SeparatorToolStripMenuItem, Me.RenameToolStripMenuItem, Me.DeleteToolStripMenuItem})
@@ -216,11 +280,35 @@ Partial Class MainForm
         Me.SzóToolStripMenuItem.Size = New System.Drawing.Size(41, 21)
         Me.SzóToolStripMenuItem.Text = "Szó"
         '
+        'NewWordToolStripMenuItem
+        '
+        Me.NewWordToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.add
+        Me.NewWordToolStripMenuItem.Name = "NewWordToolStripMenuItem"
+        Me.NewWordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2
+        Me.NewWordToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.NewWordToolStripMenuItem.Text = "Új szó..."
+        '
         'SeparatorToolStripMenuItem
         '
         Me.SeparatorToolStripMenuItem.Name = "SeparatorToolStripMenuItem"
         Me.SeparatorToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.SeparatorToolStripMenuItem.Text = "Elválasztó alá"
+        '
+        'RenameToolStripMenuItem
+        '
+        Me.RenameToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.type
+        Me.RenameToolStripMenuItem.Name = "RenameToolStripMenuItem"
+        Me.RenameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4
+        Me.RenameToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.RenameToolStripMenuItem.Text = "Átnevezés..."
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.eraser
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.DeleteToolStripMenuItem.Text = "Törlés"
         '
         'VocabToolStripMenuItem
         '
@@ -229,17 +317,49 @@ Partial Class MainForm
         Me.VocabToolStripMenuItem.Size = New System.Drawing.Size(80, 21)
         Me.VocabToolStripMenuItem.Text = "Szószedet"
         '
+        'SearchToolStripMenuItem
+        '
+        Me.SearchToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.search1
+        Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
+        Me.SearchToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
+        Me.SearchToolStripMenuItem.Text = "Keresés..."
+        '
         'VocabSeparator2
         '
         Me.VocabSeparator2.Name = "VocabSeparator2"
         Me.VocabSeparator2.Size = New System.Drawing.Size(231, 6)
         '
+        'DeleteAllToolStripMenuItem
+        '
+        Me.DeleteAllToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.danger
+        Me.DeleteAllToolStripMenuItem.Name = "DeleteAllToolStripMenuItem"
+        Me.DeleteAllToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Shift Or System.Windows.Forms.Keys.Delete), System.Windows.Forms.Keys)
+        Me.DeleteAllToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
+        Me.DeleteAllToolStripMenuItem.Text = "Összes törlése..."
+        '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BasicSettingsToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BasicSettingsToolStripMenuItem, Me.SoundOnLoadToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(75, 21)
         Me.SettingsToolStripMenuItem.Text = "Eszközök"
+        '
+        'BasicSettingsToolStripMenuItem
+        '
+        Me.BasicSettingsToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.settings
+        Me.BasicSettingsToolStripMenuItem.Name = "BasicSettingsToolStripMenuItem"
+        Me.BasicSettingsToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.BasicSettingsToolStripMenuItem.Text = "Alapbeállítások..."
+        '
+        'SoundOnLoadToolStripMenuItem
+        '
+        Me.SoundOnLoadToolStripMenuItem.Checked = True
+        Me.SoundOnLoadToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.SoundOnLoadToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.musicplayer
+        Me.SoundOnLoadToolStripMenuItem.Name = "SoundOnLoadToolStripMenuItem"
+        Me.SoundOnLoadToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.SoundOnLoadToolStripMenuItem.Text = "Hangjelzés betöltéskor"
         '
         'HelpToolStripMenuItem
         '
@@ -253,6 +373,14 @@ Partial Class MainForm
         Me.GithubToolStripMenuItem.Name = "GithubToolStripMenuItem"
         Me.GithubToolStripMenuItem.Size = New System.Drawing.Size(229, 22)
         Me.GithubToolStripMenuItem.Text = "Github"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.about1
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(229, 22)
+        Me.AboutToolStripMenuItem.Text = "A program névjegye..."
         '
         'ContextMenuStrip
         '
@@ -287,6 +415,13 @@ Partial Class MainForm
         Me.SearchContextToolStripMenuItem.Name = "SearchContextToolStripMenuItem"
         Me.SearchContextToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.SearchContextToolStripMenuItem.Text = "Keresés..."
+        '
+        'SzínToolStripMenuItem
+        '
+        Me.SzínToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.colorpalette
+        Me.SzínToolStripMenuItem.Name = "SzínToolStripMenuItem"
+        Me.SzínToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.SzínToolStripMenuItem.Text = "Szín"
         '
         'NotifyIcon
         '
@@ -473,72 +608,6 @@ Partial Class MainForm
         Me.WordsListBox.Size = New System.Drawing.Size(326, 137)
         Me.WordsListBox.TabIndex = 1
         '
-        'Label
-        '
-        Me.Label.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label.Location = New System.Drawing.Point(24, 10)
-        Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(363, 47)
-        Me.Label.TabIndex = 0
-        Me.Label.Text = "<Selection>"
-        '
-        'ToolStrip
-        '
-        Me.ToolStrip.BackColor = System.Drawing.SystemColors.Menu
-        Me.ToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ToolStrip.Dock = System.Windows.Forms.DockStyle.None
-        Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.ToolStrip.GripMargin = New System.Windows.Forms.Padding(10)
-        Me.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripButton, Me.ToolStripSeparator9, Me.NewWordToolStripButton, Me.ToolStripSeparator2, Me.SaveVocabToolStripButton})
-        Me.ToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
-        Me.ToolStrip.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip.Margin = New System.Windows.Forms.Padding(10)
-        Me.ToolStrip.MinimumSize = New System.Drawing.Size(80, 0)
-        Me.ToolStrip.Name = "ToolStrip"
-        Me.ToolStrip.Padding = New System.Windows.Forms.Padding(10)
-        Me.ToolStrip.Size = New System.Drawing.Size(80, 729)
-        Me.ToolStrip.Stretch = True
-        Me.ToolStrip.TabIndex = 2
-        Me.ToolStrip.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(35, 6)
-        '
-        'FontDialog
-        '
-        Me.FontDialog.AllowScriptChange = False
-        Me.FontDialog.AllowSimulations = False
-        Me.FontDialog.AllowVectorFonts = False
-        Me.FontDialog.AllowVerticalFonts = False
-        Me.FontDialog.MaxSize = 100
-        Me.FontDialog.MinSize = 6
-        Me.FontDialog.ShowApply = True
-        Me.FontDialog.ShowEffects = False
-        '
-        'LoadFileBackgroundWorker
-        '
-        Me.LoadFileBackgroundWorker.WorkerReportsProgress = True
-        '
-        'ToolStripSeparator9
-        '
-        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(35, 6)
-        '
-        'SzínToolStripMenuItem
-        '
-        Me.SzínToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.color_palette
-        Me.SzínToolStripMenuItem.Name = "SzínToolStripMenuItem"
-        Me.SzínToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
-        Me.SzínToolStripMenuItem.Text = "Szín"
-        '
         'RemoveButton
         '
         Me.RemoveButton.AccessibleDescription = "Szó törléséhez nyomja meg ezt a gombot."
@@ -585,25 +654,38 @@ Partial Class MainForm
         Me.CorrectButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.CorrectButton.UseVisualStyleBackColor = False
         '
-        'SaveVocabToolStripButton
+        'Label
         '
-        Me.SaveVocabToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.SaveVocabToolStripButton.Image = Global.InfraVocabularyWindows.My.Resources.Resources.save
-        Me.SaveVocabToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.SaveVocabToolStripButton.Name = "SaveVocabToolStripButton"
-        Me.SaveVocabToolStripButton.Size = New System.Drawing.Size(35, 36)
-        Me.SaveVocabToolStripButton.Text = "Mentés"
-        Me.SaveVocabToolStripButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label.Location = New System.Drawing.Point(24, 10)
+        Me.Label.Name = "Label"
+        Me.Label.Size = New System.Drawing.Size(363, 47)
+        Me.Label.TabIndex = 0
         '
-        'NewWordToolStripButton
+        'ToolStrip
         '
-        Me.NewWordToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.NewWordToolStripButton.Image = Global.InfraVocabularyWindows.My.Resources.Resources.add
-        Me.NewWordToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.NewWordToolStripButton.Name = "NewWordToolStripButton"
-        Me.NewWordToolStripButton.Size = New System.Drawing.Size(79, 36)
-        Me.NewWordToolStripButton.Text = "Új"
-        Me.NewWordToolStripButton.ToolTipText = "Új szó"
+        Me.ToolStrip.BackColor = System.Drawing.SystemColors.Menu
+        Me.ToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip.Dock = System.Windows.Forms.DockStyle.None
+        Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.ToolStrip.GripMargin = New System.Windows.Forms.Padding(10)
+        Me.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip.ImageScalingSize = New System.Drawing.Size(32, 32)
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripButton, Me.ToolStripSeparator9, Me.NewWordToolStripButton, Me.ToolStripSeparator2, Me.SaveVocabToolStripButton})
+        Me.ToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
+        Me.ToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip.Margin = New System.Windows.Forms.Padding(10)
+        Me.ToolStrip.MinimumSize = New System.Drawing.Size(80, 0)
+        Me.ToolStrip.Name = "ToolStrip"
+        Me.ToolStrip.Padding = New System.Windows.Forms.Padding(10)
+        Me.ToolStrip.Size = New System.Drawing.Size(80, 729)
+        Me.ToolStrip.Stretch = True
+        Me.ToolStrip.TabIndex = 2
+        Me.ToolStrip.Text = "ToolStrip1"
         '
         'SearchToolStripButton
         '
@@ -611,125 +693,65 @@ Partial Class MainForm
         Me.SearchToolStripButton.Image = Global.InfraVocabularyWindows.My.Resources.Resources.search1
         Me.SearchToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.SearchToolStripButton.Name = "SearchToolStripButton"
-        Me.SearchToolStripButton.Size = New System.Drawing.Size(35, 36)
+        Me.SearchToolStripButton.Size = New System.Drawing.Size(59, 36)
         Me.SearchToolStripButton.Text = "Keresés..."
         Me.SearchToolStripButton.ToolTipText = "Keresés"
         '
-        'NewVocabToolStripMenuItem
+        'ToolStripSeparator9
         '
-        Me.NewVocabToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.newfile
-        Me.NewVocabToolStripMenuItem.Name = "NewVocabToolStripMenuItem"
-        Me.NewVocabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NewVocabToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.NewVocabToolStripMenuItem.Text = "Új szótár..."
+        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(59, 6)
         '
-        'ChooseVocabToolStripMenuItem
+        'NewWordToolStripButton
         '
-        Me.ChooseVocabToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.open_archive
-        Me.ChooseVocabToolStripMenuItem.Name = "ChooseVocabToolStripMenuItem"
-        Me.ChooseVocabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.ChooseVocabToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.ChooseVocabToolStripMenuItem.Text = "Szótár kiválasztása..."
+        Me.NewWordToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.NewWordToolStripButton.Image = Global.InfraVocabularyWindows.My.Resources.Resources.add
+        Me.NewWordToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.NewWordToolStripButton.Name = "NewWordToolStripButton"
+        Me.NewWordToolStripButton.Size = New System.Drawing.Size(59, 36)
+        Me.NewWordToolStripButton.Text = "Új"
+        Me.NewWordToolStripButton.ToolTipText = "Új szó"
         '
-        'SaveToolStripMenuItem
+        'ToolStripSeparator2
         '
-        Me.SaveToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.save
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.SaveToolStripMenuItem.Text = "Mentés"
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(59, 6)
         '
-        'OpenDirToolStripMenuItem
+        'SaveVocabToolStripButton
         '
-        Me.OpenDirToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.folder
-        Me.OpenDirToolStripMenuItem.Name = "OpenDirToolStripMenuItem"
-        Me.OpenDirToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.OpenDirToolStripMenuItem.Text = "Könyvtár megnyitása"
+        Me.SaveVocabToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.SaveVocabToolStripButton.Image = Global.InfraVocabularyWindows.My.Resources.Resources.save
+        Me.SaveVocabToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SaveVocabToolStripButton.Name = "SaveVocabToolStripButton"
+        Me.SaveVocabToolStripButton.Size = New System.Drawing.Size(59, 36)
+        Me.SaveVocabToolStripButton.Text = "Mentés"
+        Me.SaveVocabToolStripButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'MinimizeToolStripMenuItem
+        'FontDialog
         '
-        Me.MinimizeToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.minimize
-        Me.MinimizeToolStripMenuItem.Name = "MinimizeToolStripMenuItem"
-        Me.MinimizeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11
-        Me.MinimizeToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.MinimizeToolStripMenuItem.Text = "Kisméret"
+        Me.FontDialog.AllowScriptChange = False
+        Me.FontDialog.AllowSimulations = False
+        Me.FontDialog.AllowVectorFonts = False
+        Me.FontDialog.AllowVerticalFonts = False
+        Me.FontDialog.MaxSize = 100
+        Me.FontDialog.MinSize = 6
+        Me.FontDialog.ShowApply = True
+        Me.FontDialog.ShowEffects = False
         '
-        'ExitToolItem
+        'LoadFileBackgroundWorker
         '
-        Me.ExitToolItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources._exit
-        Me.ExitToolItem.Name = "ExitToolItem"
-        Me.ExitToolItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExitToolItem.Size = New System.Drawing.Size(246, 22)
-        Me.ExitToolItem.Text = "Kilépés"
+        Me.LoadFileBackgroundWorker.WorkerReportsProgress = True
         '
-        'ChooseFontToolStripMenuItem
+        'StatToolStripMenuItem
         '
-        Me.ChooseFontToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.font
-        Me.ChooseFontToolStripMenuItem.Name = "ChooseFontToolStripMenuItem"
-        Me.ChooseFontToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.ChooseFontToolStripMenuItem.Text = "Betűtípus választása..."
+        Me.StatToolStripMenuItem.Name = "StatToolStripMenuItem"
+        Me.StatToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.StatToolStripMenuItem.Text = "Statisztika..."
         '
-        'ChooseColorToolStripMenuItem
+        'ToolStripSeparator1
         '
-        Me.ChooseColorToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.color_palette
-        Me.ChooseColorToolStripMenuItem.Name = "ChooseColorToolStripMenuItem"
-        Me.ChooseColorToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.ChooseColorToolStripMenuItem.Text = "Szín választása..."
-        '
-        'NewWordToolStripMenuItem
-        '
-        Me.NewWordToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.add
-        Me.NewWordToolStripMenuItem.Name = "NewWordToolStripMenuItem"
-        Me.NewWordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2
-        Me.NewWordToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.NewWordToolStripMenuItem.Text = "Új szó..."
-        '
-        'RenameToolStripMenuItem
-        '
-        Me.RenameToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.type
-        Me.RenameToolStripMenuItem.Name = "RenameToolStripMenuItem"
-        Me.RenameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4
-        Me.RenameToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.RenameToolStripMenuItem.Text = "Átnevezés..."
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.eraser
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.DeleteToolStripMenuItem.Text = "Törlés"
-        '
-        'SearchToolStripMenuItem
-        '
-        Me.SearchToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.search1
-        Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
-        Me.SearchToolStripMenuItem.Text = "Keresés..."
-        '
-        'DeleteAllToolStripMenuItem
-        '
-        Me.DeleteAllToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.danger
-        Me.DeleteAllToolStripMenuItem.Name = "DeleteAllToolStripMenuItem"
-        Me.DeleteAllToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Shift Or System.Windows.Forms.Keys.Delete), System.Windows.Forms.Keys)
-        Me.DeleteAllToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
-        Me.DeleteAllToolStripMenuItem.Text = "Összes törlése..."
-        '
-        'BasicSettingsToolStripMenuItem
-        '
-        Me.BasicSettingsToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.settings
-        Me.BasicSettingsToolStripMenuItem.Name = "BasicSettingsToolStripMenuItem"
-        Me.BasicSettingsToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.BasicSettingsToolStripMenuItem.Text = "Alapbeállítások..."
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Image = Global.InfraVocabularyWindows.My.Resources.Resources.about1
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(229, 22)
-        Me.AboutToolStripMenuItem.Text = "A program névjegye..."
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(243, 6)
         '
         'MainForm
         '
@@ -839,4 +861,7 @@ Partial Class MainForm
     Friend WithEvents GithubToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RemoveButton As Button
     Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
+    Friend WithEvents SoundOnLoadToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents StatToolStripMenuItem As ToolStripMenuItem
 End Class

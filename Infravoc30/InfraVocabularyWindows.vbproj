@@ -41,7 +41,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>hu-HU</TargetCulture>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>1219</ApplicationRevision>
+    <ApplicationRevision>1228</ApplicationRevision>
     <ApplicationVersion>3.6.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -295,10 +295,15 @@
     <None Include="Resources\bicbuc.png" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
-      <Install>true</Install>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
       <Visible>False</Visible>
@@ -336,6 +341,7 @@
   <ItemGroup>
     <Content Include="InfraVocIcon.ico" />
     <Content Include="infravocicon3_iFz_icon.ico" />
+    <None Include="Resources\music-player.png" />
     <None Include="Resources\Kattanás.wav" />
     <None Include="Resources\Mágnestekercs.wav" />
     <None Include="Resources\katt.wav" />

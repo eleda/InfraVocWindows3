@@ -26,11 +26,11 @@
     <Setting Name="ListViewSort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Setting" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="SoundOnLoad" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Backgrounds" Type="System.String" Scope="User">
-      <Value Profile="(Default)">exit1,dog,about,bk_bird</Value>
+    <Setting Name="IsSidePaneOn" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

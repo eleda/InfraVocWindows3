@@ -152,25 +152,25 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property Setting() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property SoundOnLoad() As Boolean
             Get
-                Return CType(Me("Setting"),String)
+                Return CType(Me("SoundOnLoad"),Boolean)
             End Get
             Set
-                Me("Setting") = value
+                Me("SoundOnLoad") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("exit1,dog,about,bk_bird")>  _
-        Public Property Backgrounds() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property IsSidePaneOn() As Boolean
             Get
-                Return CType(Me("Backgrounds"),String)
+                Return CType(Me("IsSidePaneOn"),Boolean)
             End Get
             Set
-                Me("Backgrounds") = value
+                Me("IsSidePaneOn") = value
             End Set
         End Property
     End Class

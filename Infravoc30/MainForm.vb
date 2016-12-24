@@ -8,7 +8,7 @@ Public Class MainForm
     Dim loaded As Boolean = False
 
     Dim parentSplash As SplashForm
-    Dim isSidePaneShown = True
+    'Dim My.Settings.IsSidePaneOn = True
 
     Dim words As New List(Of String)
     ' Dim lfrm As LoadingForm
@@ -43,6 +43,7 @@ Public Class MainForm
     End Sub
 
     Private Sub Form1_FormClosing() Handles Me.FormClosing
+        My.Settings.Save()
         If vocabChanged Then
             Dim a = MsgBox("Kívánja menteni '" & currentFileName & "' szószedetet?", MsgBoxStyle.Question + MsgBoxStyle.YesNo)
             If a = vbYes Then
@@ -110,6 +111,17 @@ Public Class MainForm
 
         ChangeView(My.Settings.View)
         ChangeColor(My.Settings.BackColor)
+
+        SidePaneMenuItem.Checked = My.Settings.IsSidePaneOn
+
+        ' sound on load
+        SoundOnLoadToolStripMenuItem.Checked = My.Settings.SoundOnLoad
+
+        ' find startup vocabulary, create it if doesn't exist
+        If Not My.Computer.FileSystem.FileExists(currentFileName) Then
+            FileOpen(1, currentFileName, OpenMode.Output)
+            FileClose(1)
+        End If
 
         Try
             ' Load Voclist File
@@ -217,8 +229,8 @@ Public Class MainForm
 
     Private Sub NewVocabulary()
         Dim newVocabularyDialog = New NewVocabDialog
-        SaveVocabulary()
-        RefreshVocabulary()
+        'SaveVocabulary()
+        'RefreshVocabulary()
         If newVocabularyDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Dim newVocabFileName As String = newVocabularyDialog.VocabNameTextBox.Text + ".voc"
             Dim setBaseVocab As Boolean = newVocabularyDialog.AddToVocabListCheckBox.Checked
@@ -328,13 +340,9 @@ Public Class MainForm
         ShowAboutDialog()
     End Sub
 
-    Private Sub NewVocabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewVocabToolStripMenuItem.Click
-        NewVocabulary()
-    End Sub
-
     Private Sub ChooseVocabulary()
-        SaveVocabulary()
-        RefreshVocabulary()
+        ' SaveVocabulary()
+        ' RefreshVocabulary()
         Dim chooseVocabDlg = New ChooseVocabDialog
         If chooseVocabDlg.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Try
@@ -403,11 +411,6 @@ Public Class MainForm
     Private Sub OpenVocabToolStripButton_Click(sender As Object, e As EventArgs)
         ChooseVocabulary()
     End Sub
-
-    Private Sub ÚjSzótárToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewVocabToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub WordsListBox_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -574,17 +577,19 @@ Public Class MainForm
             ToolStripProgressBar.Value = i
 
             ' Play Sounds
-            Dim percent As Integer = (ToolStripProgressBar.Value / ToolStripProgressBar.Maximum) * 100
-
-            If percent = 100 And oldpercent <> percent Then
-                My.Computer.Audio.Play(My.Resources.dne,
+            If My.Settings.SoundOnLoad Then
+                Dim percent As Integer = (ToolStripProgressBar.Value / ToolStripProgressBar.Maximum) * 100
+                If percent = 100 And oldpercent <> percent Then
+                    My.Computer.Audio.Play(My.Resources.dne,
         AudioPlayMode.WaitToComplete)
-                oldpercent = percent
-            ElseIf (percent Mod SCALE) = 0 And oldpercent <> percent Then
-                My.Computer.Audio.Play(My.Resources.katt2,
+                    oldpercent = percent
+                ElseIf (percent Mod SCALE) = 0 And oldpercent <> percent Then
+                    My.Computer.Audio.Play(My.Resources.katt2,
         AudioPlayMode.WaitToComplete)
-                oldpercent = percent
+                    oldpercent = percent
+                End If
             End If
+
 
             i = i + 1
         Next
@@ -594,7 +599,7 @@ Public Class MainForm
 
         Cursor = Cursors.Default
 
-        ShowSidePane(isSidePaneShown)
+        ShowSidePane(My.Settings.IsSidePaneOn)
         ChangeView(My.Settings.View)
         ' lfrm.Close()
     End Sub
@@ -736,8 +741,9 @@ Public Class MainForm
     End Sub
 
     Private Sub SwitchSidePane()
-        isSidePaneShown = Not isSidePaneShown
-        SplitContainer.Panel2Collapsed = isSidePaneShown
+        My.Settings.IsSidePaneOn = Not My.Settings.IsSidePaneOn
+        SplitContainer.Panel2Collapsed = Not My.Settings.IsSidePaneOn
+        SidePaneMenuItem.Checked = My.Settings.IsSidePaneOn
     End Sub
 
     Private Sub ShowSidePane(isShown As Boolean)
@@ -785,5 +791,24 @@ Public Class MainForm
     End Sub
 
     Private Sub ListView_KeyU(sender As Object, e As KeyEventArgs)
+    End Sub
+
+    Private Sub SoundOnLoadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoundOnLoadToolStripMenuItem.Click
+        My.Settings.SoundOnLoad = Not My.Settings.SoundOnLoad
+        SoundOnLoadToolStripMenuItem.Checked = My.Settings.SoundOnLoad
+    End Sub
+
+    Private Sub StatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatToolStripMenuItem.Click
+        Dim statText As String = ""
+        statText = statText + "Ez a fájl " + Convert.ToString(WordsListBox.Items.Count) + " darab szót tartalmaz. "
+        MsgBox(statText, vbInformation)
+    End Sub
+
+    Private Sub ÚjSzótárToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub NewVocabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewVocabToolStripMenuItem.Click
+        NewVocabulary()
     End Sub
 End Class

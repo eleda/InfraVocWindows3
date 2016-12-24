@@ -93,26 +93,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property ajax_loader() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ajax-loader", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property bk_bird() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("bk_bird", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property cancel() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cancel", resourceCulture)
@@ -123,9 +103,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property color_palette() As System.Drawing.Bitmap
+        Friend ReadOnly Property colorpalette() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("color-palette", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("colorpalette", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -270,6 +250,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property musicplayer() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("musicplayer", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property newfile() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("newfile", resourceCulture)
@@ -280,9 +270,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property open_archive() As System.Drawing.Bitmap
+        Friend ReadOnly Property openarchive() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("open-archive", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("openarchive", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -293,16 +283,6 @@ Namespace My.Resources
         Friend ReadOnly Property openfile() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("openfile", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property pink_note_1507506_640x480() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("pink-note-1507506-640x480", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
