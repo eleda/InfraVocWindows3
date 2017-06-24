@@ -7,8 +7,8 @@ A program jelenleg csak magyar nyelven érhető el, magyar felülettel és dokum
 
 
 ## Letöltés
-A program az InstallerZip könyvtárból érhető el, ahonnan letöltve a ZIP-et és kicsomagolva, elindítható az egykattintásos .NET alapú telepítőprogram
-.
+A lefordított program az *InstallerZip* könyvtárból érhető el, ahonnan letöltve a *ZIP-et és kicsomagolva*, elindítható az *egykattintásos .NET alapú telepítőprogram*.
+
 Windows 10 operációs rendszeren, .NET Framework 4-en lett tesztelve. Hamarosan dokumentáció is készül hozzá, és az esetlegesen felmerülő hibákat is kijavítom majd.
 
 Ez a program 2006 óta fejlődik, eredetileg Microsoft Visual Basic 6.0 programnyelvvel készült, később áttértem a Visual Basic .NET nyelvre.
