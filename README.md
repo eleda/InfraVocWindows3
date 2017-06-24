@@ -1,13 +1,13 @@
 # Infra Vocabulary for Windows 3 beta
 
 Ez egy kis asztali szószedet program. Segítségével könnyedén lehet szavakat felvenni, keresni, általa pedig tanulni, tanulmányozni!
-Az alkalmazás Windowsra telepíthető, és .NET környezetben fut.
+Az alkalmazás **Windowsra** telepíthető, és .NET környezetben fut.
 
-A program jelenleg csak magyar nyelven érhető el, magyar felülettel és dokumentációval. Igény szerint lefordíthatom magyarra is.
+A program jelenleg csak **magyar nyelven** érhető el, magyar felülettel és dokumentációval. Igény szerint lefordíthatom magyarra is.
 
 
 ## Letöltés
-A lefordított program az *InstallerZip* könyvtárból érhető el, ahonnan letöltve a *ZIP-et és kicsomagolva*, elindítható az *egykattintásos .NET alapú telepítőprogram*.
+A lefordított program az **InstallerZip** könyvtárból érhető el, ahonnan letöltve a **ZIP-et és kicsomagolva**, elindítható az **egykattintásos .NET alapú telepítőprogram**.
 
 Windows 10 operációs rendszeren, .NET Framework 4-en lett tesztelve. Hamarosan dokumentáció is készül hozzá, és az esetlegesen felmerülő hibákat is kijavítom majd.
 
